@@ -1,0 +1,79 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #6C4936;
+    color: white;
+}
+
+/* Banner */
+.banner {
+    background-image: url(../IMG/Banner.jpg);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: white;
+}
+
+/* Menu */
+.menu {
+    background-color: #E2A98E;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Conteúdo */
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 50px auto;
+    background-color: #A9A9A9;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 1000px;
+    height: 220px;
+    color: white;
+    overflow: hidden;
+}
+
+/* Caixa de imagem */
+.imagem {
+    width: 250px;
+    height: 180px;
+    display: flex;
+    align-items: 20px;
+    justify-content: 30px;
+}
+
+/* Texto ao lado */
+.texto {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Paleta de cores:
+  
+    #6C4936 – marrom escuro
+    #9B4723 – marrom avermelhado
+    #D4764B – laranja terroso
+    #CC9131 – mostarda/dourado queimado
+    #E2A98E – bege rosado
+    #F6EDE3 – bege claro 
+
+  */
