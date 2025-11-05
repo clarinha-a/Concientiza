@@ -17,9 +17,9 @@ body {
     position: relative;
     min-height: 500px;
     width: 100%;
-    height: 500px;
+    height: 600px;
     background-image: url('IMG/Banner.jpg');
-    background-size: 100% 100%;
+    background-size: cover;
 }  
 
 #tela-Preta{
@@ -27,7 +27,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 500px;
+    height: 600px;
     background-color: rgba(0, 0, 0, 0.514);
     z-index: 2;
 }
@@ -58,7 +58,7 @@ header h1 {
 
 #cepara-header {
     position: absolute;
-    top: 500px;
+    top: 600px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -70,7 +70,7 @@ header h1 {
 nav {
     position: absolute;
     justify-content: space-around;
-    top: 472px;
+    top: 570px;
     left: 50%;
     width: 4000px;
     max-width: 90%;
@@ -106,18 +106,190 @@ section {
     background: #dc661f;
 }
 
-#caixa {
-    width: 100%;
-    background: white;
+.caixa{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    min-width: 300px;
+    min-height: 300px;
+    margin-top: 20px;
     padding: 40px;
+    border-radius: 5%;
+    border: 2px solid #d9cbb6;
+    background-size: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    font-size: 28px;
+    color: white;
+    font-family: "Gluten", cursive;
+    font-weight: 500;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.2;
+    overflow: hidden;
+    animation: tiraMouse 0.5s forwards;
+}
+
+#caixa-interseccionalidade {
+    background-image: url('IMG/intesecionalidade-caixa.png');
+}
+
+#caixa-etnico, #caixa-racismo, #caixa-dados {
+    background: linear-gradient(135deg, rgba(123, 57, 17, 0.9), rgba(235, 163, 39, 0.9));
+}
+
+.caixa:hover{
+    transition: background-color 0.5s ease;
+    animation: passaMouse 0.5s forwards;
+}
+
+.caixa-preta{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.titulo-caixa{
+    position: relative;
+    font-size: 1.7rem;
+    color: white;
+    font-family: "Gluten", cursive;
+    text-align: center;
+    z-index: 2;
+}
+
+.conteudo-esquerda{
+    margin-left: 80px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.conteudo-direita{
+    margin-right: 80px;
+    margin-left: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.texto-conteudo{
+    display: none;
+    flex: 1;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    width: 100%;
+    background-color: #3d2d26;
+    color: white;
+    padding: 40px 100px 20px 100px;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #eba327;
+    font-family: "Gluten", cursive;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-section p {
+    color: #f6f6e9;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #f6f6e9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-section ul li a:hover {
+    color: #eba327;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #7b3911;
+}
+
+.footer-bottom small {
+    color: #d9cbb6;
+    font-size: 0.9rem;
+}
+
+@keyframes passaMouse {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes tiraMouse {
+    from {
+        transform: translateY(-4px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
     header h1 {
         font-size: 60px;
         -webkit-text-stroke-width: 2px;
+        letter-spacing: 10px;
     }
 
     nav {
@@ -125,9 +297,48 @@ section {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        top: 560px;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
     }
 
     section {
         padding: 100px 20px 50px 20px;
+    }
+
+    .conteudo-esquerda,
+    .conteudo-direita {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .caixa {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .texto-conteudo {
+        width: 100%;
+    }
+
+    footer {
+        padding: 30px 20px 20px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        text-align: center;
     }
 }
