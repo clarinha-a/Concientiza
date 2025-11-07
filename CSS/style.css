@@ -170,35 +170,53 @@ section {
 
 .conteudo-esquerda{
     margin-left: 80px;
-    width: 50%;
+    width: calc(100% - 80px);
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 0;
     margin-bottom: 50px;
 }
 
 .conteudo-direita{
     margin-right: 80px;
     margin-left: auto;
-    width: 50%;
+    width: calc(100% - 80px);
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    gap: 30px;
+    gap: 0;
     margin-bottom: 50px;
 }
 
 .texto-conteudo{
     display: none;
     flex: 1;
-    color: white;
-    font-size: 1.1rem;
+    color: #f6f6e9;
+    font-size: 1.5rem;
     line-height: 1.8;
     text-align: justify;
-    background: rgba(0, 0, 0, 0.3);
+    background: #eba327;
     padding: 30px;
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
+    border-radius: 0 10px 10px 0;
+    font-family: "Gluten", cursive;
+    position: relative;
+    overflow: hidden;
+}
+
+.conteudo-direita .texto-conteudo{
+    border-radius: 10px 0 0 10px;
+}
+
+/* Animação vindo da esquerda (saindo da caixa) */
+.texto-conteudo.slide-from-box {
+    display: block;
+    animation: slideFromBox 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Animação vindo da direita (saindo da caixa) */
+.texto-conteudo.slide-from-right {
+    display: block;
+    animation: slideFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 footer {
@@ -285,6 +303,34 @@ footer {
     }
 }
 
+/* Animação vindo da esquerda (saindo da caixa) */
+@keyframes slideFromBox {
+    from {
+        max-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    to {
+        max-width: 1200px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Animação vindo da direita (saindo da caixa) */
+@keyframes slideFromRight {
+    from {
+        max-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    to {
+        max-width: 1200px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 60px;
@@ -317,6 +363,7 @@ footer {
         margin-right: 0;
         width: 100%;
         margin-bottom: 40px;
+        gap: 15px;
     }
 
     .caixa {
@@ -326,6 +373,7 @@ footer {
 
     .texto-conteudo {
         width: 100%;
+        border-radius: 10px !important;
     }
 
     footer {
