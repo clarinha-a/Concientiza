@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
     <title>Conscientiza</title>
 </head>
 
@@ -23,63 +23,100 @@
     <div id="cepara-header"></div>
 
     <nav>
-        <a href="#">Perfis</a>
-        <a href="#">Objetivo</a>
-        <a href="#">Entrevistas</a>
+        <a href="#temas">Temas</a>
+        <a href="#perfis">Perfis</a>
+        <a href="#objetivo">Objetivo</a>
     </nav>
 
-    <section>
-
-        <div class="conteudo-esquerda">
-            <div class="caixa" id="caixa-interseccionalidade">
-                <div class="caixa-preta"></div>
-                <p class="titulo-caixa">Interseccionalidade</p>
+    <!-- Section Temas - Carrossel -->
+    <section class="section-temas" id="temas">
+        <h2>Nossos Temas</h2>
+        <div class="carrossel-container">
+            <button id="prevBtn" class="carrossel-btn prev">‹</button>
+            <div class="carrossel-wrapper">
+                <div class="carrossel" id="carrossel">
+                    <div class="tema-card">
+                        <div class="tema-card-content">
+                            <h3>Interseccionalidade</h3>
+                            <p>Compreender como raça, gênero, classe e outras identidades se entrelaçam para moldar desigualdades sociais.</p>
+                        </div>
+                    </div>
+                    <div class="tema-card">
+                        <div class="tema-card-content">
+                            <h3>Racismo Estrutural</h3>
+                            <p>Reflexão sobre como o racismo está enraizado nas instituições e práticas sociais.</p>
+                        </div>
+                    </div>
+                    <div class="tema-card">
+                        <div class="tema-card-content">
+                            <h3>Relações Étnico-Raciais</h3>
+                            <p>Estudo das interações sociais entre diferentes grupos étnicos e raciais na sociedade.</p>
+                        </div>
+                    </div>
+                    <div class="tema-card">
+                        <div class="tema-card-content">
+                            <h3>Dados Estatísticos</h3>
+                            <p>Análise quantitativa que evidencia as desigualdades raciais e sociais.</p>
+                        </div>
+                    </div>
+                    <div class="tema-card">
+                        <div class="tema-card-content">
+                            <h3>Diversidade Cultural</h3>
+                            <p>Valorização das diferentes manifestações culturais que compõem nossa identidade coletiva.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="texto-conteudo slide-from-box" id="texto-1">
-                <p id="paragrafo-1">
-                    Interseccionalidade é um termo criado pela jurista e intelectual afro-americana Kimberlé Crenshaw, no final dos anos 1980, para mostrar que as experiências de mulheres negras não podiam ser plenamente compreendidas apenas pelas categorias "raça" ou "gênero" isoladamente. Era preciso considerar a sobreposição desses marcadores, como eles produzem formas únicas de desigualdade e violência.
-                </p>
-            </div>
+            <button id="nextBtn" class="carrossel-btn next">›</button>
         </div>
-
-        <div class="conteudo-direita">
-            <div class="caixa" id="caixa-racismo">
-                <div class="caixa-preta"></div>
-                <p class="titulo-caixa">Racismo <br> Estrutural</p>
-            </div>
-            <div class="texto-conteudo slide-from-box" id="texto-2">
-                <p id="paragrafo-2">
-                    O racismo estrutural é um conceito que explica como o racismo está enraizado nas instituições, políticas e estruturas sociais, perpetuando desigualdades mesmo sem atos individuais explícitos de discriminação. Ele opera de forma sistêmica, afetando oportunidades de emprego, educação, saúde e justiça.
-                </p>
-            </div>
-        </div>
-
-        <div class="conteudo-esquerda">
-            <div class="caixa" id="caixa-etnico">
-                <div class="caixa-preta"></div>
-                <p class="titulo-caixa">Relações <br> Étnico-Raciais</p>
-            </div>
-            <div class="texto-conteudo slide-from-box" id="texto-3">
-                <p id="paragrafo-3">
-                    As relações étnico-raciais referem-se às interações entre diferentes grupos étnicos e raciais na sociedade. O estudo dessas relações busca compreender como se constroem identidades, preconceitos, discriminações e também as formas de resistência e valorização da diversidade cultural.
-                </p>
-            </div>
-        </div>
-
-        <div class="conteudo-direita">
-            <div class="caixa" id="caixa-dados">
-                <div class="caixa-preta"></div>
-                <p class="titulo-caixa">Dados</p>
-            </div>
-            <div class="texto-conteudo slide-from-box" id="texto-4">
-                <p id="paragrafo-4">
-                    Os dados estatísticos sobre desigualdade racial no Brasil revelam disparidades significativas em diversos indicadores sociais. Pessoas negras enfrentam maiores taxas de desemprego, menor acesso à educação de qualidade, maior vulnerabilidade à violência e menores salários em comparação com pessoas brancas em posições equivalentes.
-                </p>
-            </div>
-        </div>
-
     </section>
 
+    <div class="section-divider"></div>
+
+    <!-- Section Perfis -->
+    <section class="section-perfis" id="perfis">
+        <h2>Nossos Perfis</h2>
+        <div class="perfis-container">
+            <div class="perfil">
+                <div class="perfil-badge">
+                    <div class="perfil-circle">👤</div>
+                    <div class="perfil-info">
+                        <h3>Maria Silva</h3>
+                        <p class="cargo">Pesquisadora Social</p>
+                        <p>Especialista em relações étnico-raciais e inclusão social.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="perfil">
+                <div class="perfil-badge">
+                    <div class="perfil-circle">👤</div>
+                    <div class="perfil-info">
+                        <h3>João Santos</h3>
+                        <p class="cargo">Ativista e Educador</p>
+                        <p>Promove debates sobre igualdade racial e diversidade cultural.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Section Objetivo -->
+    <section class="section-objetivo" id="objetivo">
+        <h2>Nosso Objetivo</h2>
+        <div class="objetivo-card">
+            <p>Nosso projeto visa fomentar o diálogo sobre interseccionalidade e racismo estrutural, utilizando dados e reflexões críticas.</p>
+            <div class="objetivo-highlight">
+                <p>"Nossa missão é promover consciência social através da educação e do diálogo sobre questões fundamentais de nossa sociedade."</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -89,9 +126,9 @@
             <div class="footer-section">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a href="#">Perfis</a></li>
-                    <li><a href="#">Objetivo</a></li>
-                    <li><a href="#">Entrevistas</a></li>
+                    <li><a href="#temas">Temas</a></li>
+                    <li><a href="#perfis">Perfis</a></li>
+                    <li><a href="#objetivo">Objetivo</a></li>
                 </ul>
             </div>
             <div class="footer-section">

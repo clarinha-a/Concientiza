@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -10,19 +9,20 @@ body {
     min-height: 100vh;
     width: 100%;
     background: #f0f0f0;
-    font-family: "Barriecito", system-ui;
+      font-family: "Merriweather", serif;
+
 }
 
-#tela{
+#tela {
     position: relative;
     min-height: 500px;
     width: 100%;
     height: 600px;
-    background-image: url('IMG/Banner.jpg');
+    background: linear-gradient(135deg, #7b3911 0%, #dc661f 100%);
     background-size: cover;
-}  
+}
 
-#tela-Preta{
+#tela-Preta {
     position: absolute;
     top: 0;
     left: 0;
@@ -52,7 +52,7 @@ header h1 {
     font-size: 100px;
     text-align: center;
     letter-spacing: 20px;
-    font-family: "Gluten", cursive;
+  font-family: "Merriweather", serif;
     font-weight: 200;
 }
 
@@ -87,7 +87,7 @@ nav {
 nav a {
     color: #f6f6e9;
     text-decoration: none;
-    font-family: "Gluten", cursive;
+  font-family: "Merriweather", serif;
     font-size: 1.5rem;
     font-weight: 500;
     transition: color 0.3s;
@@ -98,127 +98,391 @@ nav a:hover {
     color: #eba327;
 }
 
-section {
-    position: relative;
+/* Section Divider - Mais suave */
+.section-divider {
     width: 100%;
-    min-height: calc(100vh - 150px);
-    padding: 100px 100px 50px 100px;
-    background: #dc661f;
+    height: 80px;
+    background: linear-gradient(to bottom, 
+        rgba(123, 57, 17, 0) 0%,
+        rgba(123, 57, 17, 0.05) 50%,
+        rgba(123, 57, 17, 0) 100%
+    );
+    position: relative;
 }
 
-.caixa{
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent, 
+        rgba(123, 57, 17, 0.2), 
+        transparent
+    );
+}
+
+/* Section Temas - Carrossel */
+
+.section-temas h2 {
+    text-align: center;
+  font-family: "Merriweather", serif;
+    font-size: 3.5rem;
+    color: #f6f6e9;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 40px;
+}
+
+.carrossel-container {
+    width: 100vw; /* 100% da largura da viewport */
+    max-width: 100%;
+    height: 70vh; /* altura do carrossel */
+    margin: 0;
+    padding: 0; /* remove margens internas */
     position: relative;
-    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Wrapper interno do carrossel */
+.carrossel-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: visible; /* permite que o card central cresça */
+}
+
+
+.section-temas {
+    position: relative;
+    width: 100vw; /* ocupa toda a largura da tela */
+    height: 100vh; /* ocupa a altura total da janela */
+    background: #dc661f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.carrossel {
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 300px;
-    height: 300px;
-    min-width: 300px;
-    min-height: 300px;
-    margin-top: 20px;
-    padding: 40px;
-    border-radius: 5%;
-    border: 2px solid #d9cbb6;
-    background-size: cover;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    font-size: 28px;
-    color: white;
-    font-family: "Gluten", cursive;
-    font-weight: 500;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.2;
+    height: 100%;
+    gap: 200px;
+    transition: transform 0.6s ease-in-out;
+    padding: 0 5vw; /* pequeno respiro interno nas bordas */
+}
+
+.tema-card {
+    flex: 0 0 calc(27% - 40px);
+    min-width: calc(27% - 70px);
+    height: 80%; /* proporcional à altura do container */
+    background-color: #3d2d26;
+    border-radius: 20px;
+    padding: 50px 40px;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+    transition: all 0.4s ease;
+    position: relative;
     overflow: hidden;
-    animation: tiraMouse 0.5s forwards;
 }
 
-#caixa-interseccionalidade {
-    background-image: url('IMG/intesecionalidade-caixa.png');
+
+.tema-card.center {
+    transform: scale(1.08);
+    z-index: 10;
 }
 
-#caixa-etnico, #caixa-racismo, #caixa-dados {
-    background: linear-gradient(135deg, rgba(123, 57, 17, 0.9), rgba(235, 163, 39, 0.9));
-}
-
-.caixa:hover{
-    transition: background-color 0.5s ease;
-    animation: passaMouse 0.5s forwards;
-}
-
-.caixa-preta{
+.tema-card::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
-    pointer-events: none;
+    transition: opacity 0.3s;
 }
 
-.titulo-caixa{
+.tema-card:hover::before {
+    opacity: 0;
+}
+
+.tema-card.side {
+    transform: scale(0.88) translateX(0);
+    opacity: 0.75;
+}
+
+.tema-card:hover {
+    transform: scale(1.1) translateY(-10px);
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); */
+}
+
+.tema-card-content {
     position: relative;
-    font-size: 1.7rem;
-    color: white;
-    font-family: "Gluten", cursive;
-    text-align: center;
     z-index: 2;
 }
 
-.conteudo-esquerda{
-    margin-left: 80px;
-    width: calc(100% - 80px);
-    display: flex;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 50px;
-}
-
-.conteudo-direita{
-    margin-right: 80px;
-    margin-left: auto;
-    width: calc(100% - 80px);
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 50px;
-}
-
-.texto-conteudo{
-    display: none;
-    flex: 1;
+.tema-card h3 {
+  font-family: "Merriweather", serif;
+    font-size: 2.3rem;
     color: #f6f6e9;
-    font-size: 1.5rem;
-    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.tema-card p {
+  font-family: "Merriweather", serif;
+    font-size: 1.3rem;
+    color: #f6f6e9;
+    line-height: 2;
     text-align: justify;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(123, 57, 17, 0.95);
+    color: #f6f6e9;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carrossel-btn:hover {
     background: #eba327;
-    padding: 30px;
-    border-radius: 0 10px 10px 0;
-    font-family: "Gluten", cursive;
+    transform: translateY(-50%) scale(1.15);
+}
+
+.carrossel-btn.prev {
+    left: 40px;
+}
+
+.carrossel-btn.next {
+    right: 40px;
+}
+
+/* Section Perfis */
+.section-perfis {
+    width: 100%;
+    padding: 80px 100px;
+    background: #f0f0f0;
+}
+
+.section-perfis h2 {
+    text-align: center;
+  font-family: "Merriweather", serif;
+    font-size: 3rem;
+    color: #7b3911;
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+}
+
+.perfis-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.perfil {
+    position: relative;
+    width: 280px;
+    transition: transform 0.4s ease;
+}
+
+.perfil:hover {
+    transform: translateY(-10px);
+}
+
+.perfil:hover .perfil-badge {
+    animation: pulse 1.5s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(235, 163, 39, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(235, 163, 39, 0);
+    }
+}
+.perfil-badge {
+    position: relative;
+    width: 280px;
+    height: 340px;
+    background: linear-gradient(135deg, #7b3911, #eba327);
+    border-radius: 140px 140px 30px 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.perfil-circle {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.perfil-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+}
+
+.perfil-info h3 {
+  font-family: "Merriweather", serif;
+    font-size: 1.5rem;
+    color: #7b3911;
+    margin-bottom: 5px;
+}
+
+.perfil-info .cargo {
+    color: #eba327;
+    font-size: 0.95rem;
+    font-weight: 600;
+  font-family: "Merriweather", serif;
+    margin-bottom: 10px;
+}
+
+.perfil-info p {
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Section Objetivo - Melhor estilizado */
+.section-objetivo {
+    width: 100%;
+    padding: 100px 100px;
+    background: linear-gradient(135deg, #dc661f 0%, #7b3911 100%);
     position: relative;
     overflow: hidden;
 }
 
-.conteudo-direita .texto-conteudo{
-    border-radius: 10px 0 0 10px;
+.section-objetivo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(235, 163, 39, 0.1) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
 }
 
-/* Animação vindo da esquerda (saindo da caixa) */
-.texto-conteudo.slide-from-box {
-    display: block;
-    animation: slideFromBox 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Animação vindo da direita (saindo da caixa) */
-.texto-conteudo.slide-from-right {
-    display: block;
-    animation: slideFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+.section-objetivo h2 {
+    text-align: center;
+  font-family: "Merriweather", serif;
+    font-size: 3.5rem;
+    color: #f6f6e9;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+.objetivo-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 50px;
+    border-radius: 25px;
+    border: 2px solid rgba(246, 246, 233, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.objetivo-card::before {
+    content: '🎯';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    background: #7b3911;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.objetivo-card p {
+  font-family: "Merriweather", serif;
+    font-size: 1.4rem;
+    color: #f6f6e9;
+    line-height: 2.2;
+    text-align: justify;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.objetivo-card p:last-child {
+    margin-bottom: 0;
+}
+
+.objetivo-highlight {
+    background: rgba(235, 163, 39, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 4px solid #eba327;
+    margin-top: 30px;
+}
+
+.objetivo-highlight p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Footer */
 footer {
     width: 100%;
     background-color: #3d2d26;
@@ -242,7 +506,7 @@ footer {
 
 .footer-section h3 {
     color: #eba327;
-    font-family: "Gluten", cursive;
+  font-family: "Merriweather", serif;
     font-size: 1.5rem;
     margin-bottom: 15px;
     letter-spacing: 2px;
@@ -285,56 +549,22 @@ footer {
     font-size: 0.9rem;
 }
 
-@keyframes passaMouse {
-    from {
-        transform: translateY(0);
+/* Responsivo */
+@media (max-width: 1024px) {
+    .tema-card {
+        flex: 0 0 calc(50% - 15px);
+        min-width: calc(50% - 15px);
     }
-    to {
-        transform: translateY(-4px);
-    }
-}
 
-@keyframes tiraMouse {
-    from {
-        transform: translateY(-4px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-/* Animação vindo da esquerda (saindo da caixa) */
-@keyframes slideFromBox {
-    from {
-        max-width: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    to {
-        max-width: 1200px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-
-/* Animação vindo da direita (saindo da caixa) */
-@keyframes slideFromRight {
-    from {
-        max-width: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    to {
-        max-width: 1200px;
-        padding-left: 30px;
-        padding-right: 30px;
+    .carrossel-container {
+        padding: 0 80px;
     }
 }
 
 @media (max-width: 768px) {
     header h1 {
         font-size: 60px;
-        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-width: 5px;
         letter-spacing: 10px;
     }
 
@@ -352,28 +582,44 @@ footer {
         letter-spacing: 3px;
     }
 
-    section {
-        padding: 100px 20px 50px 20px;
+    .section-temas,
+    .section-perfis,
+    .section-objetivo {
+        padding: 60px 20px;
     }
 
-    .conteudo-esquerda,
-    .conteudo-direita {
-        flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        margin-bottom: 40px;
-        gap: 15px;
+    .section-temas h2,
+    .section-perfis h2,
+    .section-objetivo h2 {
+        font-size: 2rem;
     }
 
-    .caixa {
-        width: 100%;
-        max-width: 300px;
+    .carrossel-container {
+        padding: 0 50px;
     }
 
-    .texto-conteudo {
+    .tema-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+
+    .tema-card.center,
+    .tema-card.side {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .perfil {
         width: 100%;
-        border-radius: 10px !important;
+        max-width: 280px;
+    }
+
+    .objetivo-card {
+        padding: 30px 25px;
+    }
+
+    .objetivo-card p {
+        font-size: 1.1rem;
     }
 
     footer {
