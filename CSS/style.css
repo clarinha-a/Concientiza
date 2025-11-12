@@ -8,9 +8,9 @@ body {
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background: #f0f0f0;
-      font-family: "Merriweather", serif;
-
+    /* Cor mais clara da paleta para o fundo */
+    background: #f6f6e9;
+    font-family: "Merriweather", serif;
 }
 
 #tela {
@@ -18,7 +18,8 @@ body {
     min-height: 500px;
     width: 100%;
     height: 600px;
-    background: linear-gradient(135deg, #7b3911 0%, #dc661f 100%);
+    /* Gradiente com as cores principais da paleta */
+    background: linear-gradient(135deg, #5A3A1F 0%, #C46D2D 100%);
     background-size: cover;
 }
 
@@ -52,7 +53,7 @@ header h1 {
     font-size: 100px;
     text-align: center;
     letter-spacing: 20px;
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-weight: 200;
 }
 
@@ -63,7 +64,8 @@ header h1 {
     transform: translateX(-50%);
     width: 100%;
     height: 6px;
-    background-color: #7b3911;
+    /* Cor marrom escura da paleta */
+    background-color: #5A3A1F;
     z-index: 3;
 }
 
@@ -75,7 +77,8 @@ nav {
     width: 4000px;
     max-width: 90%;
     transform: translateX(-50%);
-    background-color: #7b3911;
+    /* Cor marrom escura da paleta */
+    background-color: #5A3A1F;
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -85,9 +88,10 @@ nav {
 }
 
 nav a {
+    /* Cor creme da paleta */
     color: #f6f6e9;
     text-decoration: none;
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 1.5rem;
     font-weight: 500;
     transition: color 0.3s;
@@ -95,18 +99,19 @@ nav a {
 }
 
 nav a:hover {
-    color: #eba327;
+    /* Cor dourada da paleta */
+    color: #F4C17B;
 }
 
 /* Section Divider - Mais suave */
 .section-divider {
     width: 100%;
     height: 80px;
-    background: linear-gradient(to bottom, 
-        rgba(123, 57, 17, 0) 0%,
-        rgba(123, 57, 17, 0.05) 50%,
-        rgba(123, 57, 17, 0) 100%
-    );
+    /* Gradiente com a cor marrom escura (convertida de #5A3A1F) */
+    background: linear-gradient(to bottom,
+            rgba(90, 58, 31, 0) 0%,
+            rgba(90, 58, 31, 0.05) 50%,
+            rgba(90, 58, 31, 0) 100%);
     position: relative;
 }
 
@@ -118,19 +123,20 @@ nav a:hover {
     transform: translate(-50%, -50%);
     width: 60%;
     height: 1px;
-    background: linear-gradient(to right, 
-        transparent, 
-        rgba(123, 57, 17, 0.2), 
-        transparent
-    );
+    /* Gradiente com a cor marrom escura (convertida de #5A3A1F) */
+    background: linear-gradient(to right,
+            transparent,
+            rgba(90, 58, 31, 0.2),
+            transparent);
 }
 
 /* Section Temas - Carrossel */
 
 .section-temas h2 {
     text-align: center;
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 3.5rem;
+    /* Cor creme da paleta */
     color: #f6f6e9;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -140,11 +146,14 @@ nav a:hover {
 }
 
 .carrossel-container {
-    width: 100vw; /* 100% da largura da viewport */
+    width: 100vw;
+    /* 100% da largura da viewport */
     max-width: 100%;
-    height: 70vh; /* altura do carrossel */
+    height: 70vh;
+    /* altura do carrossel */
     margin: 0;
-    padding: 0; /* remove margens internas */
+    padding: 0;
+    /* remove margens internas */
     position: relative;
     overflow: hidden;
 }
@@ -154,15 +163,18 @@ nav a:hover {
     width: 100%;
     height: 100%;
     position: relative;
-    overflow: visible; /* permite que o card central cresça */
+    overflow: visible;
+    /* permite que o card central cresça */
 }
-
 
 .section-temas {
     position: relative;
-    width: 100vw; /* ocupa toda a largura da tela */
-    height: 100vh; /* ocupa a altura total da janela */
-    background: #dc661f;
+    width: 100vw;
+    /* ocupa toda a largura da tela */
+    height: 100vh;
+    /* ocupa a altura total da janela */
+    /* Cor laranja queimado da paleta */
+    background: #C46D2D;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -177,22 +189,23 @@ nav a:hover {
     height: 100%;
     gap: 200px;
     transition: transform 0.6s ease-in-out;
-    padding: 0 5vw; /* pequeno respiro interno nas bordas */
+    padding: 0 5vw;
+    /* pequeno respiro interno nas bordas */
 }
 
 .tema-card {
     flex: 0 0 calc(27% - 40px);
     min-width: calc(27% - 70px);
-    height: 80%; /* proporcional à altura do container */
-    background-color: #3d2d26;
+    height: 80%;
+    /* proporcional à altura do container */
+    /* Cor marrom escura da paleta */
+    background-color: #5A3A1F;
     border-radius: 20px;
     padding: 50px 40px;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
 }
-
 
 .tema-card.center {
     transform: scale(1.08);
@@ -222,7 +235,6 @@ nav a:hover {
 
 .tema-card:hover {
     transform: scale(1.1) translateY(-10px);
-    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); */
 }
 
 .tema-card-content {
@@ -231,8 +243,9 @@ nav a:hover {
 }
 
 .tema-card h3 {
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 2.3rem;
+    /* Cor creme da paleta */
     color: #f6f6e9;
     margin-bottom: 20px;
     text-align: center;
@@ -240,8 +253,9 @@ nav a:hover {
 }
 
 .tema-card p {
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 1.3rem;
+    /* Cor creme da paleta */
     color: #f6f6e9;
     line-height: 2;
     text-align: justify;
@@ -251,7 +265,9 @@ nav a:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(123, 57, 17, 0.95);
+    /* Cor marrom escura (convertida de #5A3A1F) */
+    background: rgba(90, 58, 31, 0.95);
+    /* Cor creme da paleta */
     color: #f6f6e9;
     border: none;
     width: 70px;
@@ -268,7 +284,8 @@ nav a:hover {
 }
 
 .carrossel-btn:hover {
-    background: #eba327;
+    /* Cor dourada da paleta */
+    background: #F4C17B;
     transform: translateY(-50%) scale(1.15);
 }
 
@@ -284,14 +301,16 @@ nav a:hover {
 .section-perfis {
     width: 100%;
     padding: 80px 100px;
-    background: #f0f0f0;
+    /* Cor creme da paleta */
+    background: #f6f6e9;
 }
 
 .section-perfis h2 {
     text-align: center;
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 3rem;
-    color: #7b3911;
+    /* Cor ferrugem/vinho da paleta */
+    color: #A64B35;
     margin-bottom: 60px;
     letter-spacing: 3px;
 }
@@ -321,20 +340,26 @@ nav a:hover {
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(235, 163, 39, 0.7);
+        /* Cor dourada (convertida de #F4C17B) */
+        box-shadow: 0 0 0 0 rgba(244, 193, 123, 0.7);
     }
+
     50% {
         transform: scale(1.05);
-        box-shadow: 0 0 0 15px rgba(235, 163, 39, 0);
+        box-shadow: 0 0 0 15px rgba(244, 193, 123, 0);
     }
 }
+
 .perfil-badge {
     position: relative;
     width: 280px;
     height: 340px;
-    background: linear-gradient(135deg, #7b3911, #eba327);
+    /* Gradiente com cores da paleta (ferrugem e laranja claro) */
+    background: linear-gradient(135deg, #A64B35, #E6955D);
     border-radius: 140px 140px 30px 30px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -368,17 +393,19 @@ nav a:hover {
 }
 
 .perfil-info h3 {
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 1.5rem;
-    color: #7b3911;
+    /* Cor ferrugem/vinho da paleta */
+    color: #A64B35;
     margin-bottom: 5px;
 }
 
 .perfil-info .cargo {
-    color: #eba327;
+    /* Cor laranja queimado da paleta */
+    color: #C46D2D;
     font-size: 0.95rem;
     font-weight: 600;
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     margin-bottom: 10px;
 }
 
@@ -392,7 +419,8 @@ nav a:hover {
 .section-objetivo {
     width: 100%;
     padding: 100px 100px;
-    background: linear-gradient(135deg, #dc661f 0%, #7b3911 100%);
+    /* Gradiente com cores da paleta */
+    background: linear-gradient(135deg, #C46D2D 0%, #5A3A1F 100%);
     position: relative;
     overflow: hidden;
 }
@@ -404,19 +432,26 @@ nav a:hover {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(235, 163, 39, 0.1) 0%, transparent 70%);
+    /* Cor dourada (convertida de #F4C17B) */
+    background: radial-gradient(circle, rgba(244, 193, 123, 0.1) 0%, transparent 70%);
     animation: rotate 30s linear infinite;
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .section-objetivo h2 {
     text-align: center;
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 3.5rem;
+    /* Cor creme da paleta */
     color: #f6f6e9;
     margin-bottom: 50px;
     letter-spacing: 3px;
@@ -445,7 +480,8 @@ nav a:hover {
     left: 50%;
     transform: translateX(-50%);
     font-size: 60px;
-    background: #7b3911;
+    /* Cor marrom escura da paleta */
+    background: #5A3A1F;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -456,8 +492,9 @@ nav a:hover {
 }
 
 .objetivo-card p {
-  font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif;
     font-size: 1.4rem;
+    /* Cor creme da paleta */
     color: #f6f6e9;
     line-height: 2.2;
     text-align: justify;
@@ -470,10 +507,12 @@ nav a:hover {
 }
 
 .objetivo-highlight {
-    background: rgba(235, 163, 39, 0.3);
+    /* Cor dourada (convertida de #F4C17B) */
+    background: rgba(244, 193, 123, 0.3);
     padding: 30px;
     border-radius: 15px;
-    border-left: 4px solid #eba327;
+    /* Cor dourada da paleta */
+    border-left: 4px solid #F4C17B;
     margin-top: 30px;
 }
 
@@ -485,7 +524,8 @@ nav a:hover {
 /* Footer */
 footer {
     width: 100%;
-    background-color: #3d2d26;
+    /* Cor marrom escura da paleta */
+    background-color: #5A3A1F;
     color: white;
     padding: 40px 100px 20px 100px;
     margin-top: auto;
@@ -505,14 +545,16 @@ footer {
 }
 
 .footer-section h3 {
-    color: #eba327;
-  font-family: "Merriweather", serif;
+    /* Cor dourada da paleta */
+    color: #F4C17B;
+    font-family: "Merriweather", serif;
     font-size: 1.5rem;
     margin-bottom: 15px;
     letter-spacing: 2px;
 }
 
 .footer-section p {
+    /* Cor creme da paleta */
     color: #f6f6e9;
     line-height: 1.8;
     margin-bottom: 10px;
@@ -528,6 +570,7 @@ footer {
 }
 
 .footer-section ul li a {
+    /* Cor creme da paleta */
     color: #f6f6e9;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -535,18 +578,19 @@ footer {
 }
 
 .footer-section ul li a:hover {
-    color: #eba327;
+    /* Cor dourada da paleta */
+    color: #F4C17B;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #7b3911;
+    /* Cor laranja queimado para a borda (mais visível) */
+    border-top: 1px solid #C46D2D;
 }
 
 .footer-bottom small {
     color: #d9cbb6;
-    font-size: 0.9rem;
 }
 
 /* Responsivo */
@@ -635,4 +679,102 @@ footer {
         min-width: 100%;
         text-align: center;
     }
+}
+
+#section-novos-cards {
+    width: 100%;
+    /* Fundo bege claro da paleta */
+    background: #f6f6e9; 
+    padding: 80px 40px; /* Padding lateral menor para focar nos cards */
+    position: relative;
+    overflow: hidden;
+}
+
+#section-novos-cards h2 {
+    text-align: center;
+    font-family: "Merriweather", serif;
+    font-size: 3rem;
+    /* Cor ferrugem/vinho da paleta */
+    color: #A64B35; 
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+}
+
+/* Container para centralizar os cards */
+.cards-container {
+    display: flex;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    align-items: stretch; /* Faz os cards terem a mesma altura se quebrarem a linha */
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto; /* Garante que o container em si esteja centrado */
+}
+
+/* Estilo do Novo Card */
+.novo-card {
+    /* Cor marrom escura da paleta */
+    background: #5A3A1F; 
+    /* Cor creme para o texto */
+    color: #f6f6e9; 
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    flex-basis: 500px; /* Define um tamanho base para o card */
+    flex-grow: 1; /* Permite que o card cresça se houver espaço */
+    max-width: 600px; /* Limite máximo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.novo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.novo-card h3 {
+    font-family: "Merriweather", serif;
+    font-size: 1.9rem;
+    /* Cor dourada da paleta */
+    color: #F4C17B; 
+    margin-bottom: 20px;
+}
+
+.novo-card p {
+    font-family: "Merriweather", serif;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 15px; /* Espaçamento entre parágrafos */
+}
+
+.novo-card ul {
+    font-family: "Merriweather", serif;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    list-style-position: inside; /* Coloca os marcadores dentro do card */
+    padding-left: 10px;
+}
+
+.novo-card ul li {
+    margin-bottom: 10px;
+}
+
+.novo-card ul li::marker {
+    /* Cor dourada para os marcadores da lista */
+    color: #F4C17B; 
+}
+
+#section-novos-cards {
+    padding: 60px 20px;
+}
+
+.cards-container {
+    /* Faz os cards empilharem verticalmente no celular */
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.novo-card {
+    /* O card ocupa a largura total no celular */
+    flex-basis: 100%; 
 }
