@@ -1,4 +1,4 @@
-const carrossel = document.querySelector("#Carrossel");
+const carrosselWrapper = document.querySelector(".carrossel-wrapper");
 const cards = document.querySelectorAll(".Card");
 const dotsContainer = document.querySelector("#carousel-dots");
 
@@ -23,27 +23,11 @@ cards.forEach((_, index) => {
 
 const dots = document.querySelectorAll(".dot");
 
-
-// ⚡ Função com animação suave de verdade
+// Função para ir até o slide
 function scrollToSlide(index) {
-    const slide = cards[index];
-    const leftOffset =
-        slide.offsetLeft - (carrossel.offsetWidth - slide.offsetWidth) / 2;
-
-    // animação de empurrão
-    carrossel.classList.add("slide-push");
-
-    setTimeout(() => {
-        carrossel.classList.remove("slide-push");
-
-        carrossel.scrollTo({
-            left: leftOffset,
-            behavior: "smooth"
-        });
-        
-    }, 150); // o efeito de “empurrar” antes da troca real
+    const percentage = index * -100;
+    carrosselWrapper.style.transform = `translateX(${percentage}%)`;
 }
-
 
 // Atualiza bolinhas
 function updateDots() {
@@ -51,34 +35,10 @@ function updateDots() {
     dots[currentSlide].classList.add("active");
 }
 
-
-// Detecta automaticamente qual slide está centralizado
-carrossel.addEventListener("scroll", () => {
-    let center = carrossel.scrollLeft + carrossel.offsetWidth / 2;
-
-    let closestIndex = 0;
-    let minDistance = Infinity;
-
-    cards.forEach((card, index) => {
-        let cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        let dist = Math.abs(center - cardCenter);
-
-        if (dist < minDistance) {
-            minDistance = dist;
-            closestIndex = index;
-        }
-    });
-
-    currentSlide = closestIndex;
-    updateDots();
-});
-
-
 // AUTO-PLAY: muda a cada 10 segundos
 let autoSlide = setInterval(nextSlide, 10000);
 
 // Função que vai para o próximo slide automaticamente
-
 function nextSlide() {
     currentSlide++;
     if (currentSlide >= totalSlides) currentSlide = 0;
@@ -87,9 +47,12 @@ function nextSlide() {
     updateDots();
 }
 
-
 // Reinicia o timer quando clicar nas bolinhas
 function resetAutoSlide() {
     clearInterval(autoSlide);
     autoSlide = setInterval(nextSlide, 10000);
 }
+
+// Inicializar no primeiro slide
+scrollToSlide(0);
+updateDots();
