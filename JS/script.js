@@ -1,58 +1,46 @@
-const carrosselWrapper = document.querySelector(".carrossel-wrapper");
-const cards = document.querySelectorAll(".Card");
-const dotsContainer = document.querySelector("#carousel-dots");
-
-let currentSlide = 0;
-let totalSlides = cards.length;
-let autoSlide;
-
-// Criar bolinhas automaticamente
-cards.forEach((_, index) => {
-  let dot = document.createElement("div");
-  dot.classList.add("dot");
-  if (index === 0) dot.classList.add("active");
-  dot.addEventListener("click", () => {
-    goToSlide(index);
+// Carrossel com 3 cards visíveis, movimento de 1 em 1 e destaque no card central
+document.addEventListener('DOMContentLoaded', () => {
+    const carrossel = document.getElementById('carrossel');
+    const cards = Array.from(document.querySelectorAll('.tema-card'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const cardsPorVez = 3;
+    let indice = 0;
+  
+    if (!carrossel || cards.length === 0) return;
+  
+    const atualizarEstado = () => {
+      const cardWidth = cards[0].offsetWidth;
+      const gap = parseFloat(getComputedStyle(carrossel).gap) || 0;
+      const deslocamento = indice * (cardWidth + gap);
+      carrossel.style.transform = `translateX(-${deslocamento}px)`;
+  
+      // Habilita/desabilita botões
+      prevBtn.disabled = indice === 0;
+      nextBtn.disabled = indice >= cards.length - cardsPorVez;
+  
+      prevBtn.style.opacity = prevBtn.disabled ? '0.45' : '1';
+      nextBtn.style.opacity = nextBtn.disabled ? '0.45' : '1';
+      prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+      nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+  
+      // Atualiza destaque do card central
+      cards.forEach(c => c.classList.remove('center'));
+      const centro = indice + 1; // o card do meio do trio
+      if (cards[centro]) cards[centro].classList.add('center');
+    };
+  
+    const mover = (delta) => {
+      const novoIndice = indice + delta;
+      if (novoIndice < 0 || novoIndice > cards.length - cardsPorVez) return;
+      indice = novoIndice;
+      atualizarEstado();
+    };
+  
+    prevBtn.addEventListener('click', () => mover(-1));
+    nextBtn.addEventListener('click', () => mover(1));
+    window.addEventListener('resize', atualizarEstado);
+  
+    atualizarEstado();
   });
-  dotsContainer.appendChild(dot);
-});
-
-const dots = document.querySelectorAll(".dot");
-
-// Função para ir até o slide específico
-function goToSlide(index) {
-  currentSlide = index;
-  // Como cada card ocupa 25% do wrapper, precisamos mover 25% por slide
-  carrosselWrapper.style.transform = `translateX(-${currentSlide * 25}%)`;
-  updateDots();
-  resetAutoSlide();
-}
-
-// Atualiza bolinhas
-function updateDots() {
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[currentSlide].classList.add("active");
-}
-
-// Função que vai para o próximo slide automaticamente (um por vez)
-function nextSlide() {
-  currentSlide++;
-  if (currentSlide >= totalSlides) {
-    currentSlide = 0;
-  }
-  // Como cada card ocupa 25% do wrapper, precisamos mover 25% por slide
-  carrosselWrapper.style.transform = `translateX(-${currentSlide * 25}%)`;
-  updateDots();
-}
-
-// Reinicia o timer quando clicar nas bolinhas
-function resetAutoSlide() {
-  clearInterval(autoSlide);
-  autoSlide = setInterval(nextSlide, 10000);
-}
-
-// Inicializar no primeiro slide
-goToSlide(0);
-autoSlide = setInterval(nextSlide, 10000);
-
-
+  
