@@ -4,174 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="racismo, estrutura, concientiza, interccescionalidade, raça, etnia, relações">
+    <meta name="author"
+        content="Luis Felipe Bardeli Nakachi, Artêmis Marques Lima, Victoria Santos Araujo, Ana Clara Campanella Belchior">
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <title>Conscientiza</title>
 </head>
 
 <body>
 
-    <div id="tela-Preta"></div>
-
-    <div id="tela">
-        <header>
-            <h1>Conscientiza</h1>
-        </header>
-    </div>
-
-    <div id="cepara-header"></div>
+    <header>
+        <div class="quadrado"></div>
+        <div class="logo">Logo</div>
+        <div class="letreiro">concientiza</div>
+    </header>
 
     <nav>
-        <a href="#temas">Temas</a>
-        <a href="#perfis">Perfis</a>
-        <a href="#objetivo">Objetivo</a>
+        <a href="#">Conceitos</a>
+        <a href="#">Perfis</a>
+        <a href="#">Estrevistas</a>
+        <a href="#">Frases</a>
+        <a href="#">Objetivo</a>
     </nav>
 
-    <!-- Section Temas - Carrossel -->
-    <section class="section-temas" id="temas">
-        <h2>Nossos Temas</h2>
-        <div class="carrossel-container">
-            <button id="prevBtn" class="carrossel-btn prev">‹</button>
-            <div class="carrossel-wrapper">
-                <div class="carrossel" id="carrossel">
-                    <div class="tema-card">
-                        <div class="tema-card-content">
-                            <h3>Interseccionalidade</h3>
-                            <p>Compreender como raça, gênero, classe e outras identidades se entrelaçam para moldar desigualdades sociais.</p>
-                        </div>
-                    </div>
-                    <div class="tema-card">
-                        <div class="tema-card-content">
-                            <h3>Racismo Estrutural</h3>
-                            <p>Reflexão sobre como o racismo está enraizado nas instituições e práticas sociais.</p>
-                        </div>
-                    </div>
-                    <div class="tema-card">
-                        <div class="tema-card-content">
-                            <h3>Relações Étnico-Raciais</h3>
-                            <p>Estudo das interações sociais entre diferentes grupos étnicos e raciais na sociedade.</p>
-                        </div>
-                    </div>
-                    <div class="tema-card">
-                        <div class="tema-card-content">
-                            <h3>Dados Estatísticos</h3>
-                            <p>Análise quantitativa que evidencia as desigualdades raciais e sociais.</p>
-                        </div>
-                    </div>
-                    <div class="tema-card">
-                        <div class="tema-card-content">
-                            <h3>Diversidade Cultural</h3>
-                            <p>Valorização das diferentes manifestações culturais que compõem nossa identidade coletiva.</p>
-                        </div>
-                    </div>
-                </div>
+
+    <!-- Carrossel/conceitos -->
+    <section id="Carrossel">
+        <div class="carrossel-wrapper">
+            <div class="Card" id="card01">
+                <h2>Slide 1</h2>
             </div>
-            <button id="nextBtn" class="carrossel-btn next">›</button>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Section Perfis -->
-    <section class="section-perfis" id="perfis">
-        <h2>Nossos Perfis</h2>
-        <div class="perfis-container">
-            <div class="perfil">
-                <div class="perfil-badge">
-                    <div class="perfil-circle">👤</div>
-                    <div class="perfil-info">
-                        <h3>Maria Silva</h3>
-                        <p class="cargo">Pesquisadora Social</p>
-                        <p>Especialista em relações étnico-raciais e inclusão social.</p>
-                    </div>
-                </div>
+            <div class="Card" id="card02">
+                <h2>Slide 2</h2>
             </div>
-
-            <div class="perfil">
-                <div class="perfil-badge">
-                    <div class="perfil-circle">👤</div>
-                    <div class="perfil-info">
-                        <h3>João Santos</h3>
-                        <p class="cargo">Ativista e Educador</p>
-                        <p>Promove debates sobre igualdade racial e diversidade cultural.</p>
-                    </div>
-                </div>
+            <div class="Card" id="card03">
+                <h2>Slide 3</h2>
+            </div>
+            <div class="Card" id="card04">
+                <h2>Slide 4</h2>
             </div>
         </div>
+        <div id="carousel-dots"></div>
     </section>
 
-    <div class="section-divider"></div>
+   
 
-    <!-- Section Objetivo -->
-    <section class="section-objetivo" id="objetivo">
-        <h2>Nosso Objetivo</h2>
-        <div class="objetivo-card">
-            <p>Nosso projeto visa fomentar o diálogo sobre interseccionalidade e racismo estrutural, utilizando dados e reflexões críticas.</p>
-            <div class="objetivo-highlight">
-                <p>"Nossa missão é promover consciência social através da educação e do diálogo sobre questões fundamentais de nossa sociedade."</p>
-            </div>
+
+    <!-- Perfis -->
+    <section id="Perfis">
+
+        <div id="perfil01" class="perfil">
+            <div class="fotos-Perfil"><img src="" alt=""></div>
         </div>
-    </section>
 
-    <div class="section-divider"></div>
-
-
-    <div class="section-divider"></div>
-
-    <section id="section-novos-cards">
-        <h2>Espaço de Destaque</h2>
-        <div class="cards-container">
-            
-            <div class="novo-card">
-                <h3>Título do Card (Parágrafo)</h3>
-                <p>Este é um novo espaço para escrita, estilizado como um card. Ele se centraliza na tela e usa a paleta de cores definida. Ideal para destacar informações curtas, avisos ou links.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-
-            <div class="novo-card">
-                <h3>Título do Card (Lista)</h3>
-                <p>Também é possível usar listas para organizar a informação:</p>
-                <ul>
-                    <li>Item da lista 1</li>
-                    <li>Item da lista 2</li>
-                    <li>Item da lista 3</li>
-                    <li>Item da lista 4</li>
-                </ul>
-            </div>
-
+        <div id="perfil02" class="perfil">
+            <div class="fotos-Perfil"><img src="" alt=""></div>
         </div>
+
+        <div id="perfil03" class="perfil">
+            <div class="fotos-Perfil"><img src="" alt=""></div>
+        </div>
+
+        <div id="perfil04" class="perfil">
+            <div class="fotos-Perfil"><img src="" alt=""></div>
+        </div>
+
     </section>
 
-    <div class="section-divider"></div>
+
+    <!-- Videos -->
+    <section id="Videos">
+
+        <div class="video" id="video1">1</div>
+
+        <div class="video" id="video1">2</div>
+
+        <div class="video" id="video1">3</div>
+
+        <div class="video" id="video1">4</div>
+
+        <div class="video" id="video1">5</div>
+
+        <div class="video" id="video1">6</div>
+
+        <div class="video" id="video1">7</div>
+
+        <div class="video" id="video1">8</div>
+
+
+    </section>
+
+
+    <div class="tela-preta"></div>
+    <!-- Frases -->
+    <section id="Frases">
+
+        <div class="frase"></div>
+
+        <button id="soltaFrase"></button>
+
+    </section>
+
+
+    <!-- Objetivos -->
+    <section id="Objetivos">
+
+        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugiat obcaecati corrupti asperiores quod quo libero quos quisquam magni, vitae nam cum, nostrum voluptatibus laborum dolor numquam modi eveniet. Dolores!</p></div>
+
+    </section>
+
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre o Conscientiza</h3>
-                <p>Um projeto dedicado à conscientização sobre interseccionalidade e racismo estrutural, analisando questões sociais importantes.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="#temas">Temas</a></li>
-                    <li><a href="#perfis">Perfis</a></li>
-                    <li><a href="#objetivo">Objetivo</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <p>Email: contato@conscientiza.com</p>
-                <p>Telefone: (12) 00000-0000</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <small>© 2025 Conscientiza - Todos os direitos reservados</small>
-        </div>
+
     </footer>
 
-    <script src="JS/Script.js"></script>
+
+    <!-- <script src="JS/script.js"></script> -->
 </body>
 
 </html>
