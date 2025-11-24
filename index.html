@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="racismo, estrutura, concientiza, interccescionalidade, raça, etnia, relações">
-    <meta name="author"
-        content="Luis Felipe Bardeli Nakachi, Artêmis Marques Lima, Victoria Santos Araujo, Ana Clara Campanella Belchior">
+    <meta name="keywords" content="racismo, estrutura, conscientiza, interseccionalidade, raça, etnia, relações">
+    <meta name="author" content="Luis Felipe Bardeli Nakachi, Artêmis Marques Lima, Victoria Santos Araujo, Ana Clara Campanella Belchior">
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <title>Conscientiza</title>
 </head>
 
@@ -16,112 +14,186 @@
 
     <header>
         <div class="quadrado"></div>
-        <div class="logo">Logo</div>
-        <div class="letreiro">concientiza</div>
+        <div class="logo">C</div>
+        <div class="letreiro">conscientiza</div>
     </header>
 
     <nav>
-        <a href="#">Conceitos</a>
-        <a href="#">Perfis</a>
-        <a href="#">Estrevistas</a>
-        <a href="#">Frases</a>
-        <a href="#">Objetivo</a>
+        <a href="#Carrossel">Conceitos</a>
+        <a href="#Perfis">Perfis</a>
+        <a href="#Videos">Entrevistas</a>
+        <a href="#Frases">Frases</a>
+        <a href="#Objetivo">Objetivo</a>
     </nav>
-
 
     <!-- Carrossel/conceitos -->
     <section id="Carrossel">
-        <div class="carrossel-wrapper">
-            <div class="Card" id="card01">
-                <h2>Slide 1</h2>
+        <h2 class="section-title">Conceitos Fundamentais</h2>
+        <div class="carrossel-container">
+            <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+            <div class="carrossel-wrapper">
+                <div class="Card" id="card01">
+                    <div class="card-content">
+                        <h3>Relações<br>Étnico-Raciais</h3>
+                        <p>Compreensão das interações sociais entre diferentes grupos étnicos e raciais</p>
+                    </div>
+                </div>
+                <div class="Card" id="card02">
+                    <div class="card-content">
+                        <h3>Racismo<br>Estrutural</h3>
+                        <p>Sistema que perpetua desigualdades através de instituições e práticas sociais</p>
+                    </div>
+                </div>
+                <div class="Card" id="card03">
+                    <div class="card-content">
+                        <h3>Interseccionalidade</h3>
+                        <p>Análise das múltiplas identidades e suas interações com sistemas de opressão</p>
+                    </div>
+                </div>
+                <div class="Card" id="card04">
+                    <div class="card-content">
+                        <h3>Dados</h3>
+                        <p>Estatísticas e informações que evidenciam desigualdades raciais no Brasil</p>
+                    </div>
+                </div>
             </div>
-            <div class="Card" id="card02">
-                <h2>Slide 2</h2>
-            </div>
-            <div class="Card" id="card03">
-                <h2>Slide 3</h2>
-            </div>
-            <div class="Card" id="card04">
-                <h2>Slide 4</h2>
-            </div>
+            <button class="carousel-btn next" aria-label="Próximo">›</button>
         </div>
         <div id="carousel-dots"></div>
     </section>
 
-   
-
-
     <!-- Perfis -->
     <section id="Perfis">
+        <h2 class="section-title">Perfis Inspiradores</h2>
+        <div class="perfis-container">
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <img src="images/perfil01.jpg" alt="Perfil 1">
+                </div>
+                <h3>Nome do Ativista 1</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
 
-        <div id="perfil01" class="perfil">
-            <div class="fotos-Perfil"><img src="" alt=""></div>
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <img src="images/perfil02.jpg" alt="Perfil 2">
+                </div>
+                <h3>Nome do Ativista 2</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
+
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <img src="images/perfil03.jpg" alt="Perfil 3">
+                </div>
+                <h3>Nome do Ativista 3</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
+
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <img src="images/perfil04.jpg" alt="Perfil 4">
+                </div>
+                <h3>Nome do Ativista 4</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
         </div>
-
-        <div id="perfil02" class="perfil">
-            <div class="fotos-Perfil"><img src="" alt=""></div>
-        </div>
-
-        <div id="perfil03" class="perfil">
-            <div class="fotos-Perfil"><img src="" alt=""></div>
-        </div>
-
-        <div id="perfil04" class="perfil">
-            <div class="fotos-Perfil"><img src="" alt=""></div>
-        </div>
-
     </section>
 
-
-    <!-- Videos -->
+    <!-- SEÇÃO VÍDEOS -->
     <section id="Videos">
-
-        <div class="video" id="video1">1</div>
-
-        <div class="video" id="video1">2</div>
-
-        <div class="video" id="video1">3</div>
-
-        <div class="video" id="video1">4</div>
-
-        <div class="video" id="video1">5</div>
-
-        <div class="video" id="video1">6</div>
-
-        <div class="video" id="video1">7</div>
-
-        <div class="video" id="video1">8</div>
-
-
+        <h2 class="section-title">Entrevistas e Depoimentos</h2>
+        <div class="videos-carousel">
+            <div class="video">
+                <div class="video-content">
+                    <span>Vídeo 1</span>
+                    <p>Entrevista sobre racismo estrutural</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content">
+                    <span>Vídeo 2</span>
+                    <p>Depoimento sobre interseccionalidade</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content">
+                    <span>Vídeo 3</span>
+                    <p>História de superação</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content">
+                    <span>Vídeo 4</span>
+                    <p>Debate sobre ações afirmativas</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content">
+                    <span>Vídeo 5</span>
+                    <p>Cultura e identidade</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content">
+                    <span>Vídeo 6</span>
+                    <p>Educação antirracista</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-    <div class="tela-preta"></div>
-    <!-- Frases -->
+    <!-- Frase + Botão -->
     <section id="Frases">
-
-        <div class="frase"></div>
-
-        <button id="soltaFrase"></button>
-
+        <h2 class="section-title">Mensagens Inspiradoras</h2>
+        <div class="frase-container">
+            <div class="frase">Clique no botão para ver uma mensagem inspiradora</div>
+            <button id="soltaFrase">
+                <span>Gerar Frase</span>
+            </button>
+        </div>
     </section>
 
-
-    <!-- Objetivos -->
-    <section id="Objetivos">
-
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugiat obcaecati corrupti asperiores quod quo libero quos quisquam magni, vitae nam cum, nostrum voluptatibus laborum dolor numquam modi eveniet. Dolores!</p></div>
-
+    <!-- Objetivo -->
+    <section id="Objetivo">
+        <h2 class="section-title">Nosso Objetivo</h2>
+        <div class="objetivo-content">
+            <p>O projeto Conscientiza tem como missão promover a educação antirracista e fomentar discussões importantes sobre relações étnico-raciais, combatendo o racismo estrutural através da informação e do diálogo.</p>
+            <div class="objetivo-features">
+                <div class="feature">
+                    <span class="feature-icon">📚</span>
+                    <h3>Educar</h3>
+                    <p>Compartilhar conhecimento sobre questões raciais</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💬</span>
+                    <h3>Dialogar</h3>
+                    <p>Criar espaços de conversa e reflexão</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🤝</span>
+                    <h3>Transformar</h3>
+                    <p>Construir uma sociedade mais justa e igualitária</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-    <!-- Footer -->
     <footer>
-
+        <div class="footer-content">
+            <p>© 2025 Conscientiza. Todos os direitos reservados.</p>
+            <p class="footer-authors">Desenvolvido por Luis Felipe, Artêmis, Victoria e Ana Clara</p>
+        </div>
     </footer>
 
-
-    <!-- <script src="JS/script.js"></script> -->
+    <!-- GSAP Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- GSAP ScrollTo Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <script src="JS/script.js"></script>
 </body>
 
 </html>
