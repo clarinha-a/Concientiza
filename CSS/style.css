@@ -102,7 +102,7 @@ nav {
   position: sticky;
   top: 10px;
   z-index: 999;
-  background: linear-gradient(90deg, var(--paleta2), var(--paleta3));
+  background: var(--paleta3);
   display: flex;
   justify-content: space-around;
   width: 70%;
@@ -170,74 +170,81 @@ nav a:hover::after {
 
 /* ===== CARROSSEL DE CONCEITOS (CORRIGIDO) ===== */
 #Carrossel {
-  padding: 60px 0;
+  padding: 0;
   background: var(--paleta6);
+  width: 100%;
+  margin-top: 100px;
+}
+
+#Carrossel .section-title {
+  padding-top: 60px;
+  margin-bottom: 40px;
 }
 
 .carrossel-container {
   position: relative;
-  width: 100%;
-  max-width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   overflow: hidden;
-  padding: 0 80px;
+  padding: 0;
 }
 
 .carrossel-wrapper {
   display: flex;
-  /* Removida a transição CSS - GSAP controla agora */
   will-change: transform;
-  width: fit-content;
+  width: 100%;
 }
 
 .Card {
-  min-width: 100%; /* Será ajustado pelo JavaScript */
-  width: 100%;
+  min-width: 90%;
+  width: 100vw;
   height: 500px;
-  border-radius: 24px;
-  padding: 60px;
+  padding: 60px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  margin: 0 20px;
-}
-
-.Card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: red;
-  z-index: 1;
+  
 }
 
 .card-content {
   position: relative;
   z-index: 2;
   color: var(--paleta6);
-  max-width: 800px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 #card01 {
-  background: linear-gradient(135deg, var(--paleta2), var(--paleta3));
+  background-image: url("../IMG/RER.jpg");
+  background-size: cover;
+  background-position-y: center;
+  background-repeat: no-repeat;
 }
 
 #card02 {
-  background: linear-gradient(135deg, var(--paleta3), var(--paleta4));
+  background-image: url("../IMG/RACISMO.jpg");
+  background-size: cover;
+  background-position-y: center;
+  background-repeat: no-repeat;
 }
 
 #card03 {
-  background: linear-gradient(135deg, var(--paleta1), var(--paleta2));
+  background-image: url("../IMG/Interseccionalidade.jpg");
+  background-size: cover;
+  background-position-y: center;
+  background-repeat: no-repeat;
 }
 
 #card04 {
-  background: linear-gradient(135deg, var(--paleta4), var(--paleta5));
+  background-image: url("../IMG/RER.jpg");
+  background-size: cover;
+  background-position-y: center;
+  background-repeat: no-repeat;
 }
 
 #card04 .card-content {
@@ -258,74 +265,38 @@ nav a:hover::after {
   opacity: 0.95;
 }
 
-/* Botões do carrossel */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--paleta2);
-  color: var(--paleta6);
-  border: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 32px;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-btn:hover {
-  background: var(--paleta3);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-btn:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.carousel-btn.prev {
-  left: 20px;
-}
-
-.carousel-btn.next {
-  right: 20px;
-}
-
 /* Dots do carrossel */
 #carousel-dots {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 40px;
+  padding: 40px 0 60px 0;
+  background: var(--paleta6);
 }
 
 .dot {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--paleta4);
   cursor: pointer;
   transition: all 0.3s ease;
-  opacity: 0.4;
-  border: 2px solid var(--paleta4);
+  opacity: 0.5;
+  border: 2px solid transparent;
 }
 
 .dot.active {
   background: var(--paleta2);
   border-color: var(--paleta2);
   opacity: 1;
-  transform: scale(1.4);
+  transform: scale(1.3);
+  box-shadow: 0 0 12px rgba(174, 57, 40, 0.4);
 }
 
 .dot:hover {
-  opacity: 0.7;
-  transform: scale(1.2);
+  opacity: 0.8;
+  transform: scale(1.15);
+  background: var(--paleta3);
 }
 
 /* ===== PERFIS ===== */
@@ -393,7 +364,7 @@ nav a:hover::after {
 /* ===== VÍDEOS ===== */
 #Videos {
   padding: 60px 0;
-  background: linear-gradient(90deg, var(--paleta5), var(--paleta4), var(--paleta3));
+  background: var(--paleta5);
 }
 
 .videos-carousel {
@@ -626,8 +597,7 @@ footer {
 
   .Card {
     height: 400px;
-    padding: 40px;
-    margin: 0 10px;
+    padding: 40px 20px;
   }
 
   .Card h3 {
@@ -637,16 +607,6 @@ footer {
 
   .Card p {
     font-size: 18px;
-  }
-
-  .carrossel-container {
-    padding: 0 60px;
-  }
-
-  .carousel-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 26px;
   }
 
   .perfis-container {
@@ -718,15 +678,9 @@ footer {
   }
 
   /* Carrossel mobile - 1 card por vez */
-  .carrossel-container {
-    padding: 0 45px;
-  }
-
   .Card {
     height: 350px;
     padding: 30px 20px;
-    margin: 0 5px;
-    border-radius: 16px;
   }
 
   .Card h3 {
@@ -738,28 +692,14 @@ footer {
     font-size: 16px;
   }
 
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-  }
-
-  .carousel-btn.prev {
-    left: 10px;
-  }
-
-  .carousel-btn.next {
-    right: 10px;
-  }
-
   #carousel-dots {
     gap: 10px;
-    margin-top: 30px;
+    padding: 30px 0 50px 0;
   }
 
   .dot {
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
   }
 
   /* Perfis mobile */
@@ -900,6 +840,10 @@ footer {
 
 /* Mobile pequeno */
 @media (max-width: 480px) {
+  .Card h3 {
+    font-size: 20px;
+  }
+
   .Card {
     height: 320px;
     padding: 25px 15px;
@@ -911,11 +855,5 @@ footer {
 
   .Card p {
     font-size: 15px;
-  }
-
-  .carousel-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
   }
 }

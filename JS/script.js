@@ -34,173 +34,140 @@ document.addEventListener('DOMContentLoaded', function() {
     ease: 'power2.out'
   });
 
-  // ===== CARROSSEL DE CONCEITOS CORRIGIDO =====
-  const carrosselWrapper = document.querySelector(".carrossel-wrapper");
-  const cards = document.querySelectorAll(".Card");
-  const dotsContainer = document.querySelector("#carousel-dots");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
+// ===== CARROSSEL DE CONCEITOS CORRIGIDO =====
+const carrosselWrapper = document.querySelector(".carrossel-wrapper");
+const cards = document.querySelectorAll(".Card");
+const dotsContainer = document.querySelector("#carousel-dots");
+const prevBtn = document.querySelector(".carousel-btn.prev");
+const nextBtn = document.querySelector(".carousel-btn.next");
 
-  if (carrosselWrapper && cards.length > 0) {
-    let currentSlide = 0;
-    let totalSlides = cards.length;
-    let autoSlide;
-    let slidesPerView = 1;
+if (carrosselWrapper && cards.length > 0) {
+  let currentSlide = 0;
+  let totalSlides = cards.length;
+  let autoSlide;
 
-    // Função para calcular quantos slides mostrar baseado no tamanho da tela
-    function updateSlidesPerView() {
-      const screenWidth = window.innerWidth;
-      if (screenWidth < 768) {
-        slidesPerView = 1; 
-        cards.forEach(card => card.style.minWidth = "100%");// 1 card por vez em mobile
-      } else if (screenWidth < 1024) {
-        slidesPerView = 1;
-        cards.forEach(card => card.style.minWidth = "100%");// 2 cards por vez em tablet
-      } else {
-        slidesPerView = 1;
-        cards.forEach(card => card.style.minWidth = "100%"); // 4 cards por vez em desktop
-      }
-      
-      // Ajusta a largura de cada card
-      cards.forEach(card => {
-        card.style.minWidth = `calc(100% / ${slidesPerView})`;
-      });
-    }
-
-    // Criar bolinhas automaticamente
-    cards.forEach((_, index) => {
-      let dot = document.createElement("div");
-      dot.classList.add("dot");
-      if (index === 0) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        goToSlide(index);
-      });
-      dotsContainer.appendChild(dot);
+  // Criar bolinhas automaticamente
+  cards.forEach((_, index) => {
+    let dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      goToSlide(index);
     });
+    dotsContainer.appendChild(dot);
+  });
 
-    const dots = document.querySelectorAll(".dot");
+  const dots = document.querySelectorAll(".dot");
 
-    // Função CORRIGIDA para ir até o slide específico
-    function goToSlide(index) {
-      // Limita o índice ao range válido
-      if (index < 0) {
-        currentSlide = 0;
-      } else if (index >= totalSlides) {
-        currentSlide = totalSlides - 1;
-      } else {
-        currentSlide = index;
-      }
-      
-      updateSlidesPerView();
-      
-      // Calcula o deslocamento em pixels
-      // Cada card ocupa 100% da largura do container dividido pelo número de slides visíveis
-      const containerWidth = carrosselWrapper.parentElement.offsetWidth;
-      const cardWidth = containerWidth / slidesPerView;
-      const translateValue = currentSlide * cardWidth;
-      
-      // Usa GSAP para animação suave
-      gsap.to(carrosselWrapper, {
-        x: -translateValue,
-        duration: 0.6,
-        ease: 'power2.inOut'
-      });
-      
-      updateDots();
-      resetAutoSlide();
-    }
-
-    // Atualiza bolinhas
-    function updateDots() {
-      dots.forEach(dot => dot.classList.remove("active"));
-      if (dots[currentSlide]) {
-        dots[currentSlide].classList.add("active");
-      }
-    }
-
-    // Função que vai para o próximo slide
-    function nextSlide() {
-      if (currentSlide < totalSlides - 1) {
-        goToSlide(currentSlide + 1);
-      } else {
-        goToSlide(0); // Volta para o primeiro
-      }
-    }
-
-    // Função que vai para o slide anterior
-    function prevSlide() {
-      if (currentSlide > 0) {
-        goToSlide(currentSlide - 1);
-      } else {
-        goToSlide(totalSlides - 1); // Vai para o último
-      }
-    }
-
-    // Reinicia o timer quando clicar nas bolinhas
-    function resetAutoSlide() {
-      clearInterval(autoSlide);
-      autoSlide = setInterval(nextSlide, 5000);
-    }
-
-    // Event listeners para os botões
-    if (prevBtn) {
-      prevBtn.addEventListener('click', prevSlide);
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener('click', nextSlide);
-    }
-
-    // Suporte a swipe em mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carrosselWrapper.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-
-    carrosselWrapper.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      if (touchEndX < touchStartX - 50) {
-        nextSlide(); // Swipe left
-      }
-      if (touchEndX > touchStartX + 50) {
-        prevSlide(); // Swipe right
-      }
-    }
-
-    // Atualizar ao redimensionar a janela
-    window.addEventListener('resize', () => {
-      goToSlide(currentSlide);
-    });
-
-    // Inicializar
-    updateSlidesPerView();
-    goToSlide(0);
-    autoSlide = setInterval(nextSlide, 5000);
-
-    // Animação dos cards ao scroll usando GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+  // Função para ir até o slide específico
+  function goToSlide(index) {
+    // Garante que o índice está dentro dos limites
+    currentSlide = index;
     
-    cards.forEach((card, index) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: '#Carrossel',
-          start: 'top center',
-          toggleActions: 'play none none reverse'
-        },
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.6,
-        delay: index * 0.1,
-        ease: 'back.out(1.7)'
-      });
+    // Calcula o deslocamento baseado na largura do container
+    const containerWidth = carrosselWrapper.parentElement.offsetWidth;
+    const translateValue = currentSlide * containerWidth;
+    
+    // Usa GSAP para animação suave
+    gsap.to(carrosselWrapper, {
+      x: -translateValue,
+      duration: 0.8,
+      ease: 'power2.inOut'
     });
+    
+    updateDots();
+    resetAutoSlide();
   }
 
+  // Atualiza bolinhas
+  function updateDots() {
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[currentSlide]) {
+      dots[currentSlide].classList.add("active");
+    }
+  }
+
+  // Função que vai para o próximo slide (um por vez)
+  function nextSlide() {
+    currentSlide++;
+    if (currentSlide >= totalSlides) {
+      currentSlide = 0; // Volta para o primeiro
+    }
+    goToSlide(currentSlide);
+  }
+
+  // Função que vai para o slide anterior (um por vez)
+  function prevSlide() {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = totalSlides - 1; // Vai para o último
+    }
+    goToSlide(currentSlide);
+  }
+
+  // Reinicia o timer de 20 segundos
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 20000); // 20 segundos
+  }
+
+  // Event listeners para os botões
+  if (prevBtn) {
+    prevBtn.addEventListener('click', prevSlide);
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', nextSlide);
+  }
+
+  // Suporte a swipe em mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carrosselWrapper.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  carrosselWrapper.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+      nextSlide(); // Swipe left
+    }
+    if (touchEndX > touchStartX + 50) {
+      prevSlide(); // Swipe right
+    }
+  }
+
+  // Atualizar ao redimensionar a janela
+  window.addEventListener('resize', () => {
+    goToSlide(currentSlide);
+  });
+
+  // Inicializar
+  goToSlide(0);
+  autoSlide = setInterval(nextSlide, 20000); // 20 segundos
+
+  // Animação dos cards ao scroll usando GSAP ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+  
+  cards.forEach((card, index) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: '#Carrossel',
+        start: 'top center',
+        toggleActions: 'play none none reverse'
+      },
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.6,
+      delay: index * 0.1,
+      ease: 'back.out(1.7)'
+    });
+  });
+}
   // ===== ANIMAÇÕES DE SCROLL PARA PERFIS =====
   const perfis = document.querySelectorAll('.perfil');
   
