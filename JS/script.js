@@ -19,15 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
     ease: 'elastic.out(1, 0.5)' // efeito elástico
   });
 
-  // Anima o círculo da logo
-  gsap.from('.logo', {
-    duration: 1,
-    scale: 0,
-    rotation: 360,       // giro completo
-    delay: 0.5,          // atraso para aparecer depois do quadrado
-    ease: 'back.out(1.7)'
-  });
-
   // Anima o letreiro do título
   gsap.from('.letreiro', {
     duration: 1.2,
