@@ -469,11 +469,18 @@ function abrirModal(cardId) {
       p.textContent = paragraph;
       modalContent.appendChild(p);
     });
+
+    // Reset inicial dos elementos antes de mostrar
+    gsap.set(['.modal-content', '.corner-decoration'], { opacity: 0, scale: 0.8 });
+    gsap.set('.modal-title', { opacity: 0, y: -10 });
+    gsap.set('.modal-subtitle', { opacity: 0 });
+    gsap.set('.modal-paragraph', { opacity: 0 });
+    gsap.set(modal01, { opacity: 0 });
+
+     // Mostra o modal
+     modal01.style.display = "flex";
     
-    // Mostra o modal
-    modal01.style.display = "flex";
-    
-    // Animações GSAP
+     // Animações GSAP
     const tl = gsap.timeline();
     
     tl.to(modal01, {

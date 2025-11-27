@@ -2,188 +2,230 @@
      index.html (ATUALIZADO)
      ========================= -->
 
-     <!DOCTYPE html>
-     <html lang="pt-br">
-     
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
-         <meta name="keywords"
-             content="racismo, estrutura, conscientiza, interseccionalidade, raça, etnia, relações">
-     
-         <meta name="author"
-             content="Luis Felipe Bardeli Nakachi, Artêmis Marques Lima, Victoria Santos Araujo, Ana Clara Campanella Belchior">
-     
-         <link rel="stylesheet" href="CSS/style.css">
-     
-         <link rel="stylesheet"
-             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
-     
-         <title>Conscientiza</title>
-     </head>
-     
-     <body>
-     
-         <!-- ================= HEADER ================= -->
-         <header>
-             <div class="quadrado"></div>
-     
-             <div class="letreiro">
-                 <img src="IMG/letreiro.svg" alt="">
-             </div>
-         </header>
-     
-         <!-- ================= NAVEGAÇÃO ================= -->
-         <nav>
-             <a href="#Carrossel">Conceitos</a>
-             <a href="#Perfis">Perfis</a>
-             <a href="#Videos">Entrevistas</a>
-             <a href="#Frases">Frases</a>
-             <a href="#Objetivo">Objetivo</a>
-         </nav>
-     
-         <!-- ================= CARROSSEL ================= -->
-         <section id="Carrossel">
-             <h2 class="section-title">Conceitos Fundamentais</h2>
-     
-             <div class="carrossel-container">
-                 <div class="carrossel-wrapper">
-     
-                     <!-- Card 01 -->
-                     <div class="Card" id="card01">
-                         <div class="card-overlay"></div>
-                         <div class="card-content">
-                             <h3>Relações<br>Étnico-Raciais</h3>
-                             <p>Compreensão das interações sociais entre diferentes grupos étnicos e raciais</p>
-                         </div>
-                     </div>
-     
-                     <!-- Card 02 -->
-                     <div class="Card" id="card02">
-                         <div class="card-overlay"></div>
-                         <div class="card-content">
-                             <h3>Racismo<br>Estrutural</h3>
-                             <p>Sistema que perpetua desigualdades através de instituições e práticas sociais</p>
-                         </div>
-                     </div>
-     
-                     <!-- Card 03 -->
-                     <div class="Card" id="card03">
-                         <div class="card-overlay"></div>
-                         <div class="card-content">
-                             <h3>Interseccionalidade</h3>
-                             <p>Análise das múltiplas identidades e suas interações com sistemas de opressão</p>
-                         </div>
-                     </div>
-     
-                 </div>
-             </div>
-     
-             <div id="carousel-dots"></div>
-         </section>
-     
-         <!-- ================= PERFIS ================= -->
-         <section id="Perfis">
-             <h2 class="section-title">Perfis Inspiradores</h2>
-     
-             <div class="perfis-container">
-     
-                 <div class="perfil">
-                     <div class="fotos-Perfil">
-                         <span class="material-symbols-outlined">person</span>
-                     </div>
-                     <h3>Nome do Ativista 1</h3>
-                     <p>Breve descrição sobre a pessoa e sua contribuição</p>
-                 </div>
-     
-                 <div class="perfil">
-                     <div class="fotos-Perfil">
-                         <span class="material-symbols-outlined">person</span>
-                     </div>
-                     <h3>Nome do Ativista 2</h3>
-                     <p>Breve descrição sobre a pessoa e sua contribuição</p>
-                 </div>
-     
-                 <div class="perfil">
-                     <div class="fotos-Perfil">
-                         <span class="material-symbols-outlined">person</span>
-                     </div>
-                     <h3>Nome do Ativista 3</h3>
-                     <p>Breve descrição sobre a pessoa e sua contribuição</p>
-                 </div>
-     
-                 <div class="perfil">
-                     <div class="fotos-Perfil">
-                         <span class="material-symbols-outlined">person</span>
-                     </div>
-                     <h3>Nome do Ativista 4</h3>
-                     <p>Breve descrição sobre a pessoa e sua contribuição</p>
-                 </div>
-     
-             </div>
-         </section>
-     
-         <!-- ================= VÍDEOS ================= -->
-         <section id="Videos">
-             <h2 class="section-title">Entrevistas e Depoimentos</h2>
-     
-             <div class="videos-carousel">
-                 <div class="video"><div class="video-content"><span>Vídeo 1</span><p>Entrevista sobre racismo estrutural</p></div></div>
-                 <div class="video"><div class="video-content"><span>Vídeo 2</span><p>Depoimento sobre interseccionalidade</p></div></div>
-                 <div class="video"><div class="video-content"><span>Vídeo 3</span><p>História de superação</p></div></div>
-                 <div class="video"><div class="video-content"><span>Vídeo 4</span><p>Debate sobre ações afirmativas</p></div></div>
-                 <div class="video"><div class="video-content"><span>Vídeo 5</span><p>Cultura e identidade</p></div></div>
-                 <div class="video"><div class="video-content"><span>Vídeo 6</span><p>Educação antirracista</p></div></div>
-             </div>
-         </section>
-     
-         <!-- ================= FRASES ================= -->
-         <section id="Frases">
-             <h2 class="section-title">Mensagens Inspiradoras</h2>
-     
-             <div class="frase-container">
-                 <div class="frase">Clique no botão para ver uma mensagem inspiradora</div>
-                 <button id="soltaFrase"><span>Gerar Frase</span></button>
-             </div>
-         </section>
-     
-         <!-- ================= OBJETIVO (ESTILO JORNAL) ================= -->
-         <section id="Objetivo">
-             <h2 class="section-title">Nosso Objetivo</h2>
-     
-             <div class="jornal-container">
-                 <article class="jornal-coluna">
-                     <h3>A Importância do Tema</h3>
-                     <p>Promover consciência crítica e ampliar a compreensão sobre desigualdades raciais no Brasil.</p>
-                 </article>
-     
-                 <article class="jornal-coluna">
-                     <h3>Como Atuamos</h3>
-                     <p>Por meio de conteúdos educativos, entrevistas, perfis e recursos visuais que informam com seriedade.</p>
-                 </article>
-     
-                 <article class="jornal-coluna">
-                     <h3>Nosso Compromisso</h3>
-                     <p>Contribuir para um futuro mais igualitário, reforçando a luta contínua contra o racismo estrutural.</p>
-                 </article>
-             </div>
-         </section>
-     
-         <!-- ================= FOOTER ================= -->
-         <footer>
-             <div class="footer-content">
-                 <p>© 2025 Conscientiza. Todos os direitos reservados.</p>
-                 <p class="footer-authors">Desenvolvido por Luis Felipe, Artêmis, Victoria e Ana Clara</p>
-             </div>
-         </footer>
-     
-         <!-- MODAL + SCRIPTS -->
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-         <script src="JS/script.js"></script>
-     
-     </body>
-     </html>
-     
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="racismo, estrutura, conscientiza, interseccionalidade, raça, etnia, relações">
+
+    <meta name="author"
+        content="Luis Felipe Bardeli Nakachi, Artêmis Marques Lima, Victoria Santos Araujo, Ana Clara Campanella Belchior">
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+
+    <title>Conscientiza</title>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="quadrado"></div>
+
+        <div class="letreiro">
+            <img src="IMG/letreiro.svg" alt="">
+        </div>
+    </header>
+
+    <!-- ================= NAVEGAÇÃO ================= -->
+    <nav>
+        <a href="#Carrossel">Conceitos</a>
+        <a href="#Perfis">Perfis</a>
+        <a href="#Videos">Entrevistas</a>
+        <a href="#Frases">Frases</a>
+        <a href="#Objetivo">Objetivo</a>
+    </nav>
+
+    <!-- ================= CARROSSEL ================= -->
+    <section id="Carrossel">
+        <h2 class="section-title">Conceitos Fundamentais</h2>
+
+        <div class="carrossel-container">
+            <div class="carrossel-wrapper">
+
+                <!-- Card 01 -->
+                <div class="Card" id="card01">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Relações<br>Étnico-Raciais</h3>
+                        <p>Compreensão das interações sociais entre diferentes grupos étnicos e raciais</p>
+                    </div>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="Card" id="card02">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Racismo<br>Estrutural</h3>
+                        <p>Sistema que perpetua desigualdades através de instituições e práticas sociais</p>
+                    </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="Card" id="card03">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Interseccionalidade</h3>
+                        <p>Análise das múltiplas identidades e suas interações com sistemas de opressão</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="carousel-dots"></div>
+    </section>
+
+    <!-- ================= PERFIS ================= -->
+    <section id="Perfis">
+        <h2 class="section-title">Perfis Inspiradores</h2>
+
+        <div class="perfis-container">
+
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <h3>Nome do Ativista 1</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
+
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <h3>Nome do Ativista 2</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
+
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <h3>Nome do Ativista 3</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
+
+            <div class="perfil">
+                <div class="fotos-Perfil">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <h3>Nome do Ativista 4</h3>
+                <p>Breve descrição sobre a pessoa e sua contribuição</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= VÍDEOS ================= -->
+    <section id="Videos">
+        <h2 class="section-title">Entrevistas e Depoimentos</h2>
+
+        <div class="videos-carousel">
+            <div class="video">
+                <div class="video-content"><span>Vídeo 1</span>
+                    <p>Entrevista sobre racismo estrutural</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content"><span>Vídeo 2</span>
+                    <p>Depoimento sobre interseccionalidade</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content"><span>Vídeo 3</span>
+                    <p>História de superação</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content"><span>Vídeo 4</span>
+                    <p>Debate sobre ações afirmativas</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content"><span>Vídeo 5</span>
+                    <p>Cultura e identidade</p>
+                </div>
+            </div>
+            <div class="video">
+                <div class="video-content"><span>Vídeo 6</span>
+                    <p>Educação antirracista</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FRASES ================= -->
+    <section id="Frases">
+        <h2 class="section-title">Mensagens Inspiradoras</h2>
+
+        <div class="frase-container">
+            <div class="frase">Clique no botão para ver uma mensagem inspiradora</div>
+            <button id="soltaFrase"><span>Gerar Frase</span></button>
+        </div>
+    </section>
+
+    <!-- ================= OBJETIVO (ESTILO JORNAL) ================= -->
+    <section id="Objetivo">
+        <h2 class="section-title">Nosso Objetivo</h2>
+
+        <div class="jornal-container">
+            <article class="jornal-coluna">
+                <h3>A Importância do Tema</h3>
+                <p>Promover consciência crítica e ampliar a compreensão sobre desigualdades raciais no Brasil.</p>
+            </article>
+
+            <article class="jornal-coluna">
+                <h3>Como Atuamos</h3>
+                <p>Por meio de conteúdos educativos, entrevistas, perfis e recursos visuais que informam com seriedade.
+                </p>
+            </article>
+
+            <article class="jornal-coluna">
+                <h3>Nosso Compromisso</h3>
+                <p>Contribuir para um futuro mais igualitário, reforçando a luta contínua contra o racismo estrutural.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- ================= MODAL ================= -->
+    <div id="modal01" class="modal">
+        <div class="modal-content">
+            <div class="corner-decoration top-left"></div>
+            <div class="corner-decoration top-right"></div>
+            <div class="corner-decoration bottom-left"></div>
+            <div class="corner-decoration bottom-right"></div>
+
+            <button id="closeBtn" class="modal-close">&times;</button>
+
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <p id="modalSubtitle" class="modal-subtitle"></p>
+            <div class="modal-divider"></div>
+            <div id="modalContent" class="modal-text"></div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Conscientiza. Todos os direitos reservados.</p>
+            <p class="footer-authors">Desenvolvido por Luis Felipe, Artêmis, Victoria e Ana Clara</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="JS/script.js"></script>
+
+</body>
+
+</html>
