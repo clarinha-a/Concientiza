@@ -50,30 +50,6 @@
     overflow: hidden; /* esconde o quadrado animado */
   }
   
-  /* Quadrado inclinado decorativo */
-  .quadrado {
-    position: absolute;
-    width: 800px;
-    height: 700px;
-    top: -300px;
-    left: -200px;
-    background: linear-gradient(135deg, var(--paleta1), var(--paleta2));
-    z-index: 1;
-    border-radius: 30px;
-    transform: rotate(35deg);
-    animation: roda 300s infinite linear; /* animação lenta contínua */
-  }
-  
-  /* Animação do quadrado */
-  @keyframes roda {
-    from {
-      transform: rotate(35deg);
-    }
-    to {
-      transform: rotate(395deg);
-    }
-  }
-  
   /* Nome do projeto no header */
   .letreiro {
     position: absolute;
@@ -186,7 +162,7 @@
     padding: 0;
     background: var(--paleta6);
     width: 100%;
-    margin-top: 100px;
+    margin-top: 300px;
   }
   
   .carrossel-container {
@@ -236,7 +212,7 @@
 
   /* Imagens do fundo com melhor qualidade */
   #card01 {
-    background-image: url("../IMG/RER.jpg");
+    background-image: url("../IMG/RER.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -353,7 +329,6 @@
      ============================================================= */
   #Videos {
     padding: 60px 0;
-    background: var(--paleta5);
   }
   
   .videos-carousel {
@@ -391,274 +366,179 @@
     border-color: var(--paleta3);
   }
   
-  /* =============================================================
-     SEÇÃO FRASES
-     ============================================================= */
-  #Frases {
-    padding: 60px 20px;
-    background: var(--paleta6);
-  }
-  
-  .frase-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 50px 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-    text-align: center;
-  }
-  
-  .frase {
-    min-height: 80px;
-    margin-bottom: 30px;
-    color: var(--paleta1);
-    font-size: 24px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #soltaFrase {
-    background: linear-gradient(135deg, var(--paleta3), var(--paleta4));
-    color: white;
-    border: none;
-    padding: 16px 48px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  #soltaFrase:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-  
-  /* =============================================================
-     SEÇÃO OBJETIVO
-     ============================================================= */
   /* =============================
    SEÇÃO OBJETIVO – ESTILO JORNAL
    ============================= */
 
-.jornal-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  border: 2px solid var(--paleta3);
-}
-
-.jornal-coluna {
-  border-right: 2px solid var(--paleta5);
-  padding-right: 20px;
-}
-
-.jornal-coluna:last-child {
-  border-right: none;
-}
-
-.jornal-coluna h3 {
-  font-size: 22px;
-  color: var(--paleta2);
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.jornal-coluna p {
-  font-size: 17px;
-  color: var(--paleta1);
-  text-align: justify;
-}
-
-/* Responsividade do jornal */
-@media (max-width: 768px) {
-  .jornal-coluna {
-      border-right: none;
-      border-bottom: 2px solid var(--paleta5);
-      padding-bottom: 20px;
-  }
-  .jornal-coluna:last-child {
-      border-bottom: none;
-  }
-}
-  
-  /* =============================================================
-     FOOTER
-     ============================================================= */
-  footer {
-    background: var(--paleta1);
-    color: var(--paleta6);
+   .sobre-nos {
+    background-color: #f5f5f5;   /* cor de fundo suave */
     padding: 40px 20px;
-    text-align: center;
+    font-family: Arial, sans-serif;
   }
   
-  .footer-content {
-    max-width: 1200px;
+  .sobre-nos .container {
+    max-width: 800px;
     margin: 0 auto;
   }
   
-  .footer-authors {
-    margin-top: 10px;
-    font-size: 14px;
-    opacity: 0.8;
+  .sobre-nos h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .sobre-nos p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
   }
   
   /* =============================================================
-     MODAL
-     ============================================================= */
-  .modal-overlay {
+   FOOTER EM COLUNAS
+   ============================================================= */
+footer {
+  background: var(--paleta1); /* ou use #6d3607 */
+  color: var(--paleta6); /* ou use #fff9dc */
+  padding: 60px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--paleta5); /* ou use #ffd070 */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--paleta3);
+  padding-bottom: 10px;
+}
+
+.footer-column p {
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.9;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  font-size: 15px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  padding-left: 20px;
+  position: relative;
+}
+
+.footer-column ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--paleta4); /* ou use #eb9142 */
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  color: var(--paleta6); /* ou use #fff9dc */
+  font-size: 32px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-social a:hover {
+  color: var(--paleta5); /* ou use #ffd070 */
+  transform: translateY(-5px) scale(1.1);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--paleta3);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.icone{
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  
+  .footer-column:last-child {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+  
+  .footer-column h3 {
+    text-align: center;
+  }
+  
+  .footer-column p {
+    text-align: center;
+  }
+  
+  .footer-column ul li {
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  .footer-column ul li::before {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 1000;
+  }
+  
+  .footer-social {
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    opacity: 0;
   }
   
-  .modal-overlay.active {
-    display: flex;
-  }
-  
-  .modal-content {
-    background-color: #e5c088;
-    max-width: 900px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    border: 3px solid #4a2c0f;
-    padding: 50px;
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  
-  .modal-content::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border: 1px solid #b8651b;
-    pointer-events: none;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 32px;
-    color: #4a2c0f;
-    cursor: pointer;
-    background: none;
-    border: none;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: color 0.3s ease;
-  }
-  
-  .close-btn:hover {
-    color: #b8651b;
-  }
-  
-  .modal-ornament {
-    text-align: center;
-    color: #4a2c0f;
+  .footer-social a {
     font-size: 28px;
-    margin-bottom: 20px;
   }
-  
-  .modal-title {
-    font-size: 38px;
-    font-weight: bold;
-    color: #4a2c0f;
-    text-align: center;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #6b4423;
-    padding-bottom: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  
-  .modal-subtitle {
-    text-align: center;
-    font-style: italic;
-    color: #6b4423;
-    margin-bottom: 25px;
-    font-size: 16px;
-  }
-  
-  .modal-divider {
-    height: 2px;
-    background-color: #b8651b;
-    margin: 20px 0;
-  }
-  
-  .modal-paragraph {
-    color: #4a2c0f;
-    font-size: 17px;
-    line-height: 1.9;
-    text-align: justify;
-    text-indent: 35px;
-    margin-bottom: 20px;
-  }
-  
-  .corner-decoration {
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    border: 2px solid #4a2c0f;
-  }
-  
-  .corner-tl {
-    top: 8px;
-    left: 8px;
-    border-right: none;
-    border-bottom: none;
-  }
-  
-  .corner-tr {
-    top: 8px;
-    right: 8px;
-    border-left: none;
-    border-bottom: none;
-  }
-  
-  .corner-bl {
-    bottom: 8px;
-    left: 8px;
-    border-right: none;
-    border-top: none;
-  }
-  
-  .corner-br {
-    bottom: 8px;
-    right: 8px;
-    border-left: none;
-    border-top: none;
-  }
+
+}
   
   /* =============================================================
      MEDIA QUERIES - RESPONSIVIDADE
