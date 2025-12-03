@@ -24,23 +24,23 @@ gsap.from(".sombra", {
 // =============================================================
 // ANIMAÇÃO DA NAVEGAÇÃO (CORRIGIDA)
 // =============================================================
+// Entrada do container <nav>
 gsap.from("nav", {
-  duration: 1,
-  y: -80,
+  duration: 0.9,
+  y: -40,
   opacity: 0,
   ease: "power3.out",
   delay: 0.3
 });
 
+// Entrada dos <a> sem empurrar para fora da tela
 gsap.from("nav a", {
   duration: 0.6,
-  y: -30,
   opacity: 0,
-  stagger: 0.08,
+  scale: 0.8,
+  stagger: 0.07,
   ease: "back.out(1.7)",
-  delay: 0.8
 });
-
 // =============================================================
 // ANIMAÇÃO DO SELETOR DE IDIOMAS (CORRIGIDA)
 // =============================================================
