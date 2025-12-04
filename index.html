@@ -1,21 +1,18 @@
-<!-- =========================
-     index.html (ATUALIZADO)
-     ========================= -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="keywords" content="racismo, estrutura, conscientiza, interseccionalidade, raça, etnia, relações">
-
+    <meta name="keywords"
+        content="racismo, estrutura, conscientização, interseccionalidade, raça, etnia, relações">
     <meta name="author"
         content="Luis Felipe Bardeli Nakachi, Artêmis Marques Lima, Victoria Santos Araujo, Ana Clara Campanella Belchior">
 
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="shortcut icon" href="IMG/logo.svg" sizes="192x192">
+
+    <!-- Ícones do Google -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
 
@@ -24,79 +21,176 @@
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header>
-        <div class="sombra"></div>
+    <!-- HEADER DESKTOP -->
+    <header class="header-desktop">
         <div class="letreiro">
-            <img src="IMG/letreiro.svg" alt="">
+            <img src="IMG/letreiro.svg" alt="Conscientiza">
         </div>
     </header>
 
-    <!-- ================= NAVEGAÇÃO ================= -->
-    <div class="navegacao">
+    <!-- HEADER MOBILE (só aparece em telas pequenas) -->
+    <header class="header-mobile">
+        <div class="header-mobile-top">
+            <button id="btn-menu-mobile" aria-label="Abrir menu mobile">&#9776;</button>
+
+            <div class="logo-mobile">
+                <img src="IMG/logo.svg" alt="Conscientiza">
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVEGAÇÃO DESKTOP -->
+    <div class="navegacao navegacao-desktop">
         <nav>
             <a href="#Carrossel">Conceitos</a>
             <a href="#Perfis">Perfis</a>
             <a href="#Videos">Entrevistas</a>
             <a href="#Denuncias">Denúncias</a>
             <a href="#sobre-nos">Objetivo</a>
+            <a href="#resenha">Feedback</a>
         </nav>
-    
-        <div id="idioma"><a href="versãoIngles.html">ENG</a></div>
+
+        <div id="idioma">
+            <a href="ingles.html">ENG</a>
+        </div>
     </div>
 
+    <!-- NAVEGAÇÃO MOBILE LATERAL (MENU) -->
+    <aside id="menu-mobile" class="menu-mobile">
+        <div class="menu-mobile-header">
+            <span class="menu-mobile-title">Menu</span>
+            <button id="btn-fechar-menu" aria-label="Fechar menu mobile">&times;</button>
+        </div>
 
-    <!-- ================= CARROSSEL ================= -->
-    <section id="Carrossel">
+        <div class="menu-mobile-idioma">
+            <span>Idioma</span>
+            <a href="ingles.html">English</a>
+        </div>
+
+        <nav class="menu-mobile-links">
+            <a href="#Carrossel" class="menu-link">Conceitos</a>
+            <a href="#Perfis" class="menu-link">Perfis</a>
+            <a href="#Videos" class="menu-link">Entrevistas</a>
+            <a href="#Denuncias" class="menu-link">Denúncias</a>
+            <a href="#sobre-nos" class="menu-link">Objetivo</a>
+            <a href="#resenha" class="menu-link">Feedback</a>
+        </nav>
+
+        <button id="btn-sair-menu" class="btn-sair-menu">Fechar</button>
+    </aside>
+
+    <!-- OVERLAY ESCURO DO MENU MOBILE -->
+    <div id="overlay-menu" class="overlay-menu"></div>
+
+    <!-- CARROSSEL -->
+    <section id="Carrossel" class="Carrossel">
         <h2 class="title">Conceitos Fundamentais</h2>
 
         <div class="carrossel-container">
             <div class="carrossel-wrapper">
-
                 <!-- Card 01 -->
                 <div class="Card" id="card01">
                     <div class="card-overlay"></div>
+
                     <div class="card-content">
-                        <h3>Relações<br>Étnico-Raciais</h3>
-                        <p>Compreensão das interações sociais entre diferentes grupos étnicos e raciais</p>
+                        <h3>Relações <br>Étnico-Raciais</h3>
+                        <p>Compreensão das interações sociais entre diferentes grupos étnicos e raciais.</p>
                     </div>
                 </div>
 
                 <!-- Card 02 -->
                 <div class="Card" id="card02">
                     <div class="card-overlay"></div>
+
                     <div class="card-content">
-                        <h3>Racismo<br>Estrutural</h3>
-                        <p>Sistema que perpetua desigualdades através de instituições e práticas sociais</p>
+                        <h3>Racismo <br>Estrutural</h3>
+                        <p>Sistema que perpetua desigualdades através de instituições e práticas sociais.</p>
                     </div>
                 </div>
 
                 <!-- Card 03 -->
                 <div class="Card" id="card03">
                     <div class="card-overlay"></div>
+
                     <div class="card-content">
                         <h3>Interseccionalidade</h3>
-                        <p>Análise das múltiplas identidades e suas interações com sistemas de opressão</p>
+                        <p>Análise das múltiplas identidades e suas interações com sistemas de opressão.</p>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div id="carousel-dots"></div>
+        <div id="carousel-dots" class="carousel-dots"></div>
     </section>
 
-    <!-- ================= PERFIS ================= -->
-    <section id="Perfis">
+    <!-- GRÁFICOS -->
+    <section id="Graficos" class="Graficos">
+        <h2 class="section-title">Dados e Indicadores</h2>
+        <p class="section-subtitle">
+            Visualização de dados sobre racismo estrutural e interseccionalidade.
+        </p>
+
+        <div class="graficos-grid">
+            <!-- 1 Feminicídios por raça/cor -->
+            <article class="grafico-card">
+                <h3 class="grafico-titulo">Feminicídios por raça/cor (2023)</h3>
+                <div class="grafico-wrapper">
+                    <canvas id="graficoFeminicidio"></canvas>
+                </div>
+                <p class="grafico-fontes">
+                    Fonte: Fórum Brasileiro de Segurança Pública, Anuário 2024/2025; análises sobre violência contra
+                    mulheres negras.
+                </p>
+            </article>
+
+            <!-- 2 Homicídios de mulheres por raça/cor -->
+            <article class="grafico-card">
+                <h3 class="grafico-titulo">Homicídios de mulheres por raça/cor (2023)</h3>
+                <div class="grafico-wrapper">
+                    <canvas id="graficoHomicidios"></canvas>
+                </div>
+                <p class="grafico-fontes">
+                    Fonte: Fórum Brasileiro de Segurança Pública; estudos sobre homicídios de mulheres negras e não
+                    negras.
+                </p>
+            </article>
+
+            <!-- 3 Taxa de desocupação por raça/cor -->
+            <article class="grafico-card">
+                <h3 class="grafico-titulo">Taxa de desocupação por raça/cor (2019)</h3>
+                <div class="grafico-wrapper">
+                    <canvas id="graficoDesocupacao"></canvas>
+                </div>
+                <p class="grafico-fontes">
+                    Fonte: IBGE, Síntese de Indicadores Sociais 2019 (PNAD Contínua).
+                </p>
+            </article>
+
+            <!-- 4 Trabalho informal por raça/cor -->
+            <article class="grafico-card">
+                <h3 class="grafico-titulo">Trabalhadores informais por raça/cor (2019)</h3>
+                <div class="grafico-wrapper">
+                    <canvas id="graficoInformalidade"></canvas>
+                </div>
+                <p class="grafico-fontes">
+                    Fonte: IBGE, Síntese de Indicadores Sociais 2019 (PNAD Contínua).
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- PERFIS -->
+    <section id="Perfis" class="Perfis">
         <h2 class="title">Perfis Inspiradores</h2>
 
         <div class="perfis-container">
-
             <div class="perfil">
                 <div class="fotos-Perfil">
                     <span class="material-symbols-outlined">person</span>
                 </div>
+
                 <h3>Djamila Ribeiro</h3>
+                <h4>Filósofa e escritora</h4>
                 <p>Filósofa, feminista negra e autora do best-seller "Pequeno Manual Antirracista". Referência em
                     debates sobre feminismo negro e interseccionalidade.</p>
             </div>
@@ -105,7 +199,9 @@
                 <div class="fotos-Perfil">
                     <span class="material-symbols-outlined">person</span>
                 </div>
+
                 <h3>Silvio Almeida</h3>
+                <h4>Jurista</h4>
                 <p>Jurista, filósofo e professor. Autor de "Racismo Estrutural", obra fundamental para compreender as
                     raízes do racismo na sociedade brasileira.</p>
             </div>
@@ -114,7 +210,9 @@
                 <div class="fotos-Perfil">
                     <span class="material-symbols-outlined">person</span>
                 </div>
+
                 <h3>Lélia Gonzalez</h3>
+                <h4>Intelectual</h4>
                 <p>Intelectual, professora, antropóloga e pioneira nos estudos sobre raça e gênero no Brasil. Suas
                     ideias continuam influenciando gerações.</p>
             </div>
@@ -123,113 +221,232 @@
                 <div class="fotos-Perfil">
                     <span class="material-symbols-outlined">person</span>
                 </div>
+
                 <h3>Abdias do Nascimento</h3>
+                <h4>Ativista</h4>
                 <p>Ativista, artista, escritor e político. Fundador do Teatro Experimental do Negro e defensor
                     incansável dos direitos da população negra.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- ================= VÍDEOS ================= -->
-    <section id="Videos">
+    <!-- VÍDEOS -->
+    <section id="Videos" class="Videos">
         <h2 class="section-title">Entrevistas e Depoimentos</h2>
 
-        <div class="videos-carousel">
-            <div class="video">
-                <div class="video-content">
-                    <span>Racismo Estrutural</span>
-                    <p>Entrevista sobre as bases do racismo na sociedade</p>
+        <div class="videos-carousel-container">
+            <div class="videos-carousel">
+                <!-- Video 1 -->
+                <div class="video" id="video-racismo-estrutural">
+                    <a href="#video-racismo-estrutural" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Racismo Estrutural</span>
+                            <p>Entrevista sobre as bases do racismo na sociedade.</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="video">
-                <div class="video-content">
-                    <span>Interseccionalidade</span>
-                    <p>Como raça, gênero e classe se entrelaçam</p>
+
+                <!-- Video 2 -->
+                <div class="video" id="video-interseccionalidade">
+                    <a href="#video-interseccionalidade" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Interseccionalidade</span>
+                            <p>Como raça, gênero e classe se entrelaçam.</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="video">
-                <div class="video-content">
-                    <span>Superação</span>
-                    <p>Histórias reais de enfrentamento ao preconceito</p>
+
+                <!-- Video 3 -->
+                <div class="video" id="video-superacao">
+                    <a href="#video-superacao" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Superação</span>
+                            <p>Histórias reais de enfrentamento ao preconceito.</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="video">
-                <div class="video-content">
-                    <span>Ações Afirmativas</span>
-                    <p>Debate sobre cotas e reparação histórica</p>
+
+                <!-- Video 4 -->
+                <div class="video" id="video-acao-afirmativa">
+                    <a href="#video-acao-afirmativa" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Ações Afirmativas</span>
+                            <p>Debate sobre cotas e reparação histórica.</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="video">
-                <div class="video-content">
-                    <span>Cultura e Identidade</span>
-                    <p>A importância da representatividade</p>
+
+                <!-- Video 5 -->
+                <div class="video" id="video-cultura-identidade">
+                    <a href="#video-cultura-identidade" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Cultura e Identidade</span>
+                            <p>A importância da representatividade.</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div class="video">
-                <div class="video-content">
-                    <span>Educação Antirracista</span>
-                    <p>Práticas pedagógicas para uma escola inclusiva</p>
+
+                <!-- Video 6 -->
+                <div class="video" id="video-educacao-antirracista">
+                    <a href="#video-educacao-antirracista" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Educação Antirracista</span>
+                            <p>Práticas pedagógicas para uma escola inclusiva.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- DUPLICAÇÃO PARA CARROSSEL INFINITO -->
+                <div class="video" id="video-racismo-estrutural-dup">
+                    <a href="#video-racismo-estrutural" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Racismo Estrutural</span>
+                            <p>Entrevista sobre as bases do racismo na sociedade.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video" id="video-interseccionalidade-dup">
+                    <a href="#video-interseccionalidade" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Interseccionalidade</span>
+                            <p>Como raça, gênero e classe se entrelaçam.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video" id="video-superacao-dup">
+                    <a href="#video-superacao" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Superação</span>
+                            <p>Histórias reais de enfrentamento ao preconceito.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video" id="video-acao-afirmativa-dup">
+                    <a href="#video-acao-afirmativa" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Ações Afirmativas</span>
+                            <p>Debate sobre cotas e reparação histórica.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video" id="video-cultura-identidade-dup">
+                    <a href="#video-cultura-identidade" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Cultura e Identidade</span>
+                            <p>A importância da representatividade.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="video" id="video-educacao-antirracista-dup">
+                    <a href="#video-educacao-antirracista" class="video-link">
+                        <div class="video-content">
+                            <span class="video-title">Educação Antirracista</span>
+                            <p>Práticas pedagógicas para uma escola inclusiva.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= DENÚNCIAS ================= -->
-<section id="Denuncias">
-  <h2 class="title">Denuncie</h2>
-  <div class="denuncias-box">
-    <p class="denuncias-text">
-      Se presenciar ou sofrer uma violação de direitos humanos, busque ajuda imediatamente pelos canais oficiais:
-    </p>
-    <ul class="denuncias-list">
-      <li>
-        <span class="denuncias-label">Disque 100</span>
-        <span class="denuncias-info">Telefone: 100</span>
-      </li>
-      <li>
-        <span class="denuncias-label">WhatsApp</span>
-        <span class="denuncias-info">(61) 99611-0100</span>
-      </li>
-      <li>
-        <span class="denuncias-label">Site da Ouvidoria</span>
-        <a class="denuncias-link" href="https://www.gov.br/mdh/pt-br/ondh" target="_blank" rel="noopener noreferrer">
-          www.gov.br/mdh/ondh
-        </a>
-      </li>
-    </ul>
-    <p class="denuncias-obs">
-      As denúncias podem ser anônimas e funcionam 24h por dia, todos os dias da semana.
-    </p>
-  </div>
-</section>
+    <!-- DENÚNCIAS -->
+    <section id="Denuncias" class="Denuncias">
+        <h2 class="titleDenuncie">Denuncie</h2>
 
+        <div class="denuncias-box">
+            <p class="denuncias-text">
+                Se presenciar ou sofrer uma violação de direitos humanos, busque ajuda imediatamente pelos canais
+                oficiais:
+            </p>
 
-    <!-- ================= OBJETIVO (ESTILO JORNAL) ================= -->
-<section id="sobre-nos" class="sobre-nos">
-  <div class="container">
-    <h2>Sobre Nós</h2>
-    <p>
-      Nosso intuito enquanto equipe desenvolvedora deste projeto é incentivar a conscientização sobre racismo e suas intersecções com outros preconceitos, principalmente focando no indivíduo que sofre a discriminação, para que possa entender quando se defender, mas também provocando reflexão a aqueles que violentam, intencionalmente ou não.
-    </p>
-    <p>
-      Os desenvolvedores são alunos do primeiro ano do curso de TI integrado ao Ensino Médio do IFSP Câmpus Caraguatatuba.
-    </p>
-  </div>
-</section>
+            <ul class="denuncias-list">
+                <li>
+                    <span class="denuncias-label">Disque 100</span>
+                    <span class="denuncias-info">Telefone: 100</span>
+                </li>
+                <li>
+                    <span class="denuncias-label">WhatsApp</span>
+                    <span class="denuncias-info">+55 61 99611-0100</span>
+                </li>
+                <li>
+                    <span class="denuncias-label">Site da Ouvidoria</span>
+                    <a class="denuncias-link" href="https://www.gov.br/mdh/pt-br/ondh" target="_blank"
+                        rel="noopener noreferrer">
+                        www.gov.br/mdh/ondh
+                    </a>
+                </li>
+            </ul>
 
-
-    <!-- ================= FEEDBACK  ================= -->
-
-    <section>
-
-        <label for=""></label>
-
+            <p class="denuncias-obs">
+                As denúncias podem ser anônimas e funcionam 24h por dia, todos os dias da semana.
+            </p>
+        </div>
     </section>
 
+    <!-- OBJETIVO -->
+    <section id="sobre-nos" class="sobre-nos">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <p>
+                Nosso intuito, enquanto equipe desenvolvedora deste projeto, é incentivar a conscientização sobre
+                racismo e suas intersecções com outros preconceitos, principalmente focando no indivíduo que sofre a
+                discriminação, para que possa entender quando se defender, mas também provocando reflexão àqueles que
+                violentam, intencionalmente ou não.
+            </p>
+            <p>
+                Os desenvolvedores são alunos do primeiro ano do curso de TI integrado ao Ensino Médio do IFSP Campus
+                Caraguatatuba.
+            </p>
+        </div>
+    </section>
 
+    <!-- FEEDBACK / RESENHA -->
+    <section id="resenha" class="resenha">
+        <h2 class="title">Mande sua avaliação!</h2>
 
-    <!-- ================= MODAL ================= -->
+        <label>
+            <h2>Gostou do nosso site?</h2>
+        </label>
+
+        <div class="sim-nao">
+            <input type="radio" id="sim" name="anonimato" value="sim">
+            <label for="sim">Sim</label>
+
+            <input type="radio" id="nao" name="anonimato" value="nao">
+            <label for="nao">Não</label>
+        </div>
+
+        <h2>Dê uma nota para ele!</h2>
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 estrelas">★</label>
+
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 estrelas">★</label>
+
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 estrelas">★</label>
+
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 estrelas">★</label>
+
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 estrela">★</label>
+        </div>
+
+        <h2>Deixe aqui seu comentário</h2>
+        <input type="text" name="FEEDBACK" id="texto-feedback" placeholder="Deixe seu feedback aqui..." maxlength="300">
+        <label>
+            <button id="btn-enviar">Enviar</button>
+        </label>
+    </section>
+
+    <!-- MODAL -->
     <div id="modal01" class="modal">
         <div class="modal-content">
             <div class="corner-decoration top-left"></div>
@@ -241,25 +458,27 @@
 
             <h2 id="modalTitle" class="modal-title"></h2>
             <p id="modalSubtitle" class="modal-subtitle"></p>
+
             <div class="modal-divider"></div>
+
             <div id="modalContent" class="modal-text"></div>
         </div>
     </div>
 
-
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <!-- Coluna 1: Sobre -->
+            <!-- Coluna 1 -->
             <div class="footer-column">
                 <h3>Sobre o Projeto</h3>
-                <p>O Conscientiza é uma iniciativa educacional que busca promover o diálogo sobre
-                    relações étnico-raciais, combate ao racismo estrutural e valorização da diversidade.
-                    Através de conteúdo de qualidade, buscamos contribuir para uma sociedade mais justa e igualitária.
+                <p>
+                    O Conscientiza é uma iniciativa educacional que busca promover o diálogo sobre relações
+                    étnico-raciais, combate ao racismo estrutural e valorização da diversidade. Através de conteúdo de
+                    qualidade, buscamos contribuir para uma sociedade mais justa e igualitária.
                 </p>
             </div>
 
-            <!-- Coluna 2: Integrantes -->
+            <!-- Coluna 2 -->
             <div class="footer-column">
                 <h3>Desenvolvido por</h3>
                 <ul>
@@ -270,7 +489,7 @@
                 </ul>
             </div>
 
-            <!-- Coluna 3: Redes Sociais -->
+            <!-- Coluna 3 -->
             <div class="footer-column">
                 <h3>Redes Sociais</h3>
                 <div class="footer-social">
@@ -287,20 +506,26 @@
             </div>
         </div>
 
-        <!-- Direitos Autorais -->
         <div class="footer-bottom">
-            <p>© 2025 Conscientiza. Todos os direitos reservados.</p>
+            <p>2025 Conscientiza. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <span id="seta"><a href="#Carrossel"><img src="IMG/seta.svg"></a></span>
+    <!-- BOTÃO SETA VOLTAR TOPO -->
+    <span id="seta">
+        <a href="#Carrossel">
+            <img src="IMG/seta.svg" alt="Voltar ao topo">
+        </a>
+    </span>
 
-    <!-- SCRIPTS -->
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <script src="./JS/script.js"></script>
 
+    <!-- SCRIPT PRINCIPAL -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="racism, structure, awareness, intersectionality, race, ethnicity, relations">
+  <meta name="author"
+    content="Luis Felipe Bardeli Nakachi, Artêmis Marques Lima, Victoria Santos Araujo, Ana Clara Campanella Belchior">
+
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="shortcut icon" href="IMG/logo.svg" sizes="192x192">
+
+  <!-- Google Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+
+  <title>Conscientiza</title>
+</head>
+
+<body>
+
+  <!-- HEADER DESKTOP -->
+  <header class="header-desktop">
+    <div class="letreiro">
+      <img src="IMG/letreiro.svg" alt="Conscientiza">
+    </div>
+  </header>
+
+  <!-- HEADER MOBILE (only on small screens) -->
+  <header class="header-mobile">
+    <div class="header-mobile-top">
+      <button id="btn-menu-mobile" aria-label="Open mobile menu">&#9776;</button>
+
+      <div class="logo-mobile">
+        <img src="IMG/logo.svg" alt="Conscientiza">
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION DESKTOP -->
+  <div class="navegacao navegacao-desktop">
+    <nav>
+      <a href="#Carrossel">Concepts</a>
+      <a href="#Perfis">Profiles</a>
+      <a href="#Videos">Interviews</a>
+      <a href="#Denuncias">Report</a>
+      <a href="#sobre-nos">About us</a>
+      <a href="#resenha">Feedback</a>
+    </nav>
+
+    <div id="idioma">
+      <a href="index.html">PT-BR</a>
+    </div>
+  </div>
+
+  <!-- NAVIGATION MOBILE (SIDE MENU) -->
+  <aside id="menu-mobile" class="menu-mobile">
+    <div class="menu-mobile-header">
+      <span class="menu-mobile-title">Menu</span>
+      <button id="btn-fechar-menu" aria-label="Close mobile menu">&times;</button>
+    </div>
+
+    <div class="menu-mobile-idioma">
+      <span>Language</span>
+      <a href="index.html">Português</a>
+    </div>
+
+    <nav class="menu-mobile-links">
+      <a href="#Carrossel" class="menu-link">Concepts</a>
+      <a href="#Perfis" class="menu-link">Profiles</a>
+      <a href="#Videos" class="menu-link">Interviews</a>
+      <a href="#Denuncias" class="menu-link">Report</a>
+      <a href="#sobre-nos" class="menu-link">About us</a>
+      <a href="#resenha" class="menu-link">Feedback</a>
+    </nav>
+
+    <button id="btn-sair-menu" class="btn-sair-menu">Close</button>
+  </aside>
+
+  <!-- DARK OVERLAY FOR MOBILE MENU -->
+  <div id="overlay-menu" class="overlay-menu"></div>
+
+  <!-- CONCEPTS CAROUSEL -->
+  <section id="Carrossel" class="Carrossel">
+    <h2 class="title">Key Concepts</h2>
+
+    <div class="carrossel-container">
+      <div class="carrossel-wrapper">
+        <!-- Card 01 -->
+        <div class="Card" id="card01">
+          <div class="card-overlay"></div>
+
+          <div class="card-content">
+            <h3>Ethnic-Racial <br>Relations</h3>
+            <p>Understanding social interactions between different ethnic and racial groups.</p>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="Card" id="card02">
+          <div class="card-overlay"></div>
+
+          <div class="card-content">
+            <h3>Structural <br>Racism</h3>
+            <p>System that perpetuates inequalities through institutions and social practices.</p>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="Card" id="card03">
+          <div class="card-overlay"></div>
+
+          <div class="card-content">
+            <h3>Intersectionality</h3>
+            <p>Analysis of multiple identities and how they interact with systems of oppression.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="carousel-dots" class="carousel-dots"></div>
+  </section>
+
+  <!-- CHARTS -->
+  <section id="Graficos" class="Graficos">
+    <h2 class="section-title">Data and Indicators</h2>
+    <p class="section-subtitle">
+      Visualizations about structural racism and intersectionality.
+    </p>
+
+    <div class="graficos-grid">
+      <!-- 1 Feminicide by race/color -->
+      <article class="grafico-card">
+        <h3 class="grafico-titulo">Feminicide by race/color (2023)</h3>
+        <div class="grafico-wrapper">
+          <canvas id="graficoFeminicidio"></canvas>
+        </div>
+        <p class="grafico-fontes">
+          Source: Brazilian Forum on Public Security, 2024/2025 Yearbook; analyses on violence against Black
+          women.
+        </p>
+      </article>
+
+      <!-- 2 Homicide of women by race/color -->
+      <article class="grafico-card">
+        <h3 class="grafico-titulo">Homicides of women by race/color (2023)</h3>
+        <div class="grafico-wrapper">
+          <canvas id="graficoHomicidios"></canvas>
+        </div>
+        <p class="grafico-fontes">
+          Source: Brazilian Forum on Public Security; studies on homicides of Black and non-Black women.
+        </p>
+      </article>
+
+      <!-- 3 Unemployment rate by race/color -->
+      <article class="grafico-card">
+        <h3 class="grafico-titulo">Unemployment rate by race/color (2019)</h3>
+        <div class="grafico-wrapper">
+          <canvas id="graficoDesocupacao"></canvas>
+        </div>
+        <p class="grafico-fontes">
+          Source: IBGE, Social Indicators Synthesis 2019 (Continuous PNAD).
+        </p>
+      </article>
+
+      <!-- 4 Informal work by race/color -->
+      <article class="grafico-card">
+        <h3 class="grafico-titulo">Informal workers by race/color (2019)</h3>
+        <div class="grafico-wrapper">
+          <canvas id="graficoInformalidade"></canvas>
+        </div>
+        <p class="grafico-fontes">
+          Source: IBGE, Social Indicators Synthesis 2019 (Continuous PNAD).
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROFILES -->
+  <section id="Perfis" class="Perfis">
+    <h2 class="title">Inspiring Profiles</h2>
+
+    <div class="perfis-container">
+      <div class="perfil">
+        <div class="fotos-Perfil">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+
+        <h3>Djamila Ribeiro</h3>
+        <h4>Philosopher and writer</h4>
+        <p>Black feminist philosopher and author of the best-seller “Small Anti-Racist Handbook”. A reference in
+          debates on Black feminism and intersectionality.</p>
+      </div>
+
+      <div class="perfil">
+        <div class="fotos-Perfil">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+
+        <h3>Silvio Almeida</h3>
+        <h4>Jurist</h4>
+        <p>Lawyer, philosopher and professor. Author of “Structural Racism”, a key work to understand the roots
+          of racism in Brazilian society.</p>
+      </div>
+
+      <div class="perfil">
+        <div class="fotos-Perfil">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+
+        <h3>Lélia Gonzalez</h3>
+        <h4>Intellectual</h4>
+        <p>Intellectual, professor and anthropologist, pioneer in race and gender studies in Brazil. Her ideas
+          continue to influence generations.</p>
+      </div>
+
+      <div class="perfil">
+        <div class="fotos-Perfil">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+
+        <h3>Abdias do Nascimento</h3>
+        <h4>Activist</h4>
+        <p>Activist, artist, writer and politician. Founder of the Black Experimental Theater and tireless
+          defender of Black rights in Brazil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="Videos" class="Videos">
+    <h2 class="section-title">Interviews and Testimonials</h2>
+
+    <div class="videos-carousel-container">
+      <div class="videos-carousel">
+        <!-- Video 1 -->
+        <div class="video" id="video-racismo-estrutural">
+          <a href="#video-racismo-estrutural" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Structural Racism</span>
+              <p>Interview about the foundations of racism in society.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video" id="video-interseccionalidade">
+          <a href="#video-interseccionalidade" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Intersectionality</span>
+              <p>How race, gender and class intersect.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video" id="video-superacao">
+          <a href="#video-superacao" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Overcoming</span>
+              <p>Real stories of confronting prejudice.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video" id="video-acao-afirmativa">
+          <a href="#video-acao-afirmativa" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Affirmative Actions</span>
+              <p>Debate on quotas and historical reparation.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="video" id="video-cultura-identidade">
+          <a href="#video-cultura-identidade" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Culture and Identity</span>
+              <p>The importance of representation.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="video" id="video-educacao-antirracista">
+          <a href="#video-educacao-antirracista" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Anti-racist Education</span>
+              <p>Teaching practices for an inclusive school.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- DUPLICATES FOR INFINITE CAROUSEL -->
+        <div class="video" id="video-racismo-estrutural-dup">
+          <a href="#video-racismo-estrutural" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Structural Racism</span>
+              <p>Interview about the foundations of racism in society.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video" id="video-interseccionalidade-dup">
+          <a href="#video-interseccionalidade" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Intersectionality</span>
+              <p>How race, gender and class intersect.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video" id="video-superacao-dup">
+          <a href="#video-superacao" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Overcoming</span>
+              <p>Real stories of confronting prejudice.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video" id="video-acao-afirmativa-dup">
+          <a href="#video-acao-afirmativa" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Affirmative Actions</span>
+              <p>Debate on quotas and historical reparation.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video" id="video-cultura-identidade-dup">
+          <a href="#video-cultura-identidade" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Culture and Identity</span>
+              <p>The importance of representation.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video" id="video-educacao-antirracista-dup">
+          <a href="#video-educacao-antirracista" class="video-link">
+            <div class="video-content">
+              <span class="video-title">Anti-racist Education</span>
+              <p>Teaching practices for an inclusive school.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORT -->
+  <section id="Denuncias" class="Denuncias">
+    <h2 class="titleDenuncie">Report</h2>
+
+    <div class="denuncias-box">
+      <p class="denuncias-text">
+        If you witness or suffer a human rights violation, seek help immediately through the official channels:
+      </p>
+
+      <ul class="denuncias-list">
+        <li>
+          <span class="denuncias-label">Dial 100</span>
+          <span class="denuncias-info">Phone: 100 (Brazil)</span>
+        </li>
+        <li>
+          <span class="denuncias-label">WhatsApp</span>
+          <span class="denuncias-info">+55 61 99611-0100</span>
+        </li>
+        <li>
+          <span class="denuncias-label">Ombudsman site</span>
+          <a class="denuncias-link" href="https://www.gov.br/mdh/pt-br/ondh" target="_blank" rel="noopener noreferrer">
+            www.gov.br/mdh/ondh
+          </a>
+        </li>
+      </ul>
+
+      <p class="denuncias-obs">
+        Reports can be anonymous and work 24 hours a day, every day of the week.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="sobre-nos" class="sobre-nos">
+    <div class="container">
+      <h2>About us</h2>
+      <p>
+        As the team developing this project, our aim is to encourage awareness about racism and its intersections
+        with other forms of prejudice, focusing mainly on people who suffer discrimination, so they can recognize
+        when and how to defend themselves, but also provoking reflection in those who commit violence,
+        intentionally or not.
+      </p>
+      <p>
+        The developers are first-year students of the Integrated High School IT course at IFSP Campus
+        Caraguatatuba.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEEDBACK / REVIEW -->
+  <section id="resenha" class="resenha">
+    <h2 class="title">Send your feedback!</h2>
+
+    <label>
+      <h2>Did you like our website?</h2>
+    </label>
+
+    <div class="sim-nao">
+      <input type="radio" id="sim" name="anonimato" value="yes">
+      <label for="sim">Yes</label>
+
+      <input type="radio" id="nao" name="anonimato" value="no">
+      <label for="nao">No</label>
+    </div>
+
+    <h2>Give it a score!</h2>
+    <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5" title="5 stars">★</label>
+
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4" title="4 stars">★</label>
+
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3" title="3 stars">★</label>
+
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2" title="2 stars">★</label>
+
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1" title="1 star">★</label>
+    </div>
+
+    <h2>Leave your comment</h2>
+    <input type="text" name="FEEDBACK" id="texto-feedback" placeholder="Leave your feedback here..." maxlength="300">
+    <label>
+      <button id="btn-enviar">Send</button>
+    </label>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal01" class="modal">
+    <div class="modal-content">
+      <div class="corner-decoration top-left"></div>
+      <div class="corner-decoration top-right"></div>
+      <div class="corner-decoration bottom-left"></div>
+      <div class="corner-decoration bottom-right"></div>
+
+      <button id="closeBtn" class="modal-close">&times;</button>
+
+      <h2 id="modalTitle" class="modal-title"></h2>
+      <p id="modalSubtitle" class="modal-subtitle"></p>
+
+      <div class="modal-divider"></div>
+
+      <div id="modalContent" class="modal-text"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <!-- Column 1 -->
+      <div class="footer-column">
+        <h3>About the project</h3>
+        <p>
+          Conscientiza is an educational initiative that promotes dialogue on ethnic-racial relations,
+          structural racism and the value of diversity. Through quality content, we seek to contribute to a
+          fairer and more equal society.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-column">
+        <h3>Developed by</h3>
+        <ul>
+          <li>Luis Felipe Bardeli Nakachi</li>
+          <li>Artêmis Marques Lima</li>
+          <li>Victoria Santos Araujo</li>
+          <li>Ana Clara Campanella Belchior</li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-column">
+        <h3>Social media</h3>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram" title="Instagram">
+            <img class="icone" src="IMG/instagram.svg" alt="Instagram">
+          </a>
+          <a href="#" aria-label="Facebook" title="Facebook">
+            <img class="icone" src="IMG/facebook.svg" alt="Facebook">
+          </a>
+          <a href="#" aria-label="Telegram" title="Telegram">
+            <img class="icone" src="IMG/telegram.svg" alt="Telegram">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>2025 Conscientiza. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <span id="seta">
+    <a href="#Carrossel">
+      <img src="IMG/seta.svg" alt="Back to top">
+    </a>
+  </span>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- MAIN SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="JS/scriptIngles.js"></script>
+</body>
+
+</html>
